@@ -26,7 +26,7 @@ module "log_metric_filter" {
   pattern = "ERROR"
 
   metric_transformation_namespace = "MyApplication"
-  metric_transformation_name = "ErrorCount"
+  metric_transformation_name      = "ErrorCount"
 }
 ```
 
