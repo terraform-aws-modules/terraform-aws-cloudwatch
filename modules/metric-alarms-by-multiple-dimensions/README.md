@@ -1,4 +1,4 @@
-# metric-alarm
+# metric-alarms-by-multiple-dimensions
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
@@ -32,7 +32,7 @@
 
 | Name | Description |
 |------|-------------|
-| this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm. |
-| this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm. |
+| this\_cloudwatch\_metric\_alarm\_arns | List of ARN of the Cloudwatch metric alarms |
+| this\_cloudwatch\_metric\_alarm\_ids | List of ID of the Cloudwatch metric alarms |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

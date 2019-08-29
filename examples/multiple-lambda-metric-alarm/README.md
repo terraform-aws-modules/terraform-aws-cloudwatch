@@ -19,8 +19,8 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Description |
 |------|-------------|
-| this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm |
-| this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm |
+| this\_cloudwatch\_metric\_alarm\_arns | List of ARN of the Cloudwatch metric alarms |
+| this\_cloudwatch\_metric\_alarm\_ids | List of ID of the Cloudwatch metric alarms |
 | this\_lambda\_function1\_arn |  |
 | this\_lambda\_function1\_name |  |
 

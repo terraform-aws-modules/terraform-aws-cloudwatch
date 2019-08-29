@@ -55,12 +55,47 @@ module "metric_alarm" {
 }
 ```
 
+### Metric alarms by multiple dimensions
+
+This submodule is useful when you need to create very similar alarms where only dimensions are different (eg, multiple AWS Lambda functions), but the rest of arguments are the same.
+
+```hcl
+module "metric_alarms" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/metric-alarms-by-multiple-dimensions"
+  version = "~> 1.0"
+
+  alarm_name          = "lambda-duration-"
+  alarm_description   = "Lambda duration is too high"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = 1
+  threshold           = 10
+  period              = 60
+  unit                = "Milliseconds"
+
+  namespace   = "AWS/Lambda"
+  metric_name = "Duration"
+  statistic   = "Maximum"
+
+  dimensions = {
+    "lambda1" = {
+      FunctionName = "index"
+    },
+    "lambda2" = {
+      FunctionName = "signup"
+    },
+  }
+
+  alarm_actions = ["arn:aws:sns:eu-west-1:835367859852:my-sns-queue"]
+}
+```
+
 Check out [list of all AWS services that publish CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) for detailed information about each supported service.
 
 ## Examples
 
 * [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
 * [Cloudwatch metric alarms for AWS Lambda](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/lambda-metric-alarm)
+* [Cloudwatch metric alarms for AWS Lambda with multiple dimensions](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-alarms-by-multiple-dimensions)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

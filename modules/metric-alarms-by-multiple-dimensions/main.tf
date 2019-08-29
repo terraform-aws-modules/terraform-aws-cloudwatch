@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_metric_alarm" "this" {
-  count = var.create_metric_alarm ? 1 : 0
+  for_each = var.create_metric_alarm && length(keys(var.dimensions)) > 0 ? var.dimensions : {}
 
-  alarm_name        = var.alarm_name
+  alarm_name        = format("%s%s", var.alarm_name, each.key)
   alarm_description = var.alarm_description
   actions_enabled   = var.actions_enabled
 
@@ -25,7 +25,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
   statistic          = var.statistic
   extended_statistic = var.extended_statistic
 
-  dimensions = var.dimensions
+  dimensions = each.value
 
   # conflicts with metric_name
   dynamic "metric_query" {
