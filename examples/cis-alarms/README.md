@@ -1,6 +1,6 @@
-# Complete Cloudwatch log metric filter and alarm
+# CIS AWS Foundations Controls - complete example
 
-Configuration in this directory creates Cloudwatch log metric (based on pattern "ERROR") and connects it to Cloudwatch alarm which will push to SNS topic.
+Configuration in this directory creates Cloudwatch metric alarms as described in [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
 ## Usage
 
@@ -27,8 +27,7 @@ No input.
 
 | Name | Description |
 |------|-------------|
-| this\_cloudwatch\_log\_metric\_filter\_id | The name of the metric filter |
-| this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm |
-| this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm |
+| this\_cloudwatch\_metric\_alarm\_arns | List of ARNs of the Cloudwatch metric alarm |
+| this\_cloudwatch\_metric\_alarm\_ids | List of IDs of the Cloudwatch metric alarm |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
