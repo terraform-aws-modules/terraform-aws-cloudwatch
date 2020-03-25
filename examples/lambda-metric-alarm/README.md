@@ -15,13 +15,21 @@ $ terraform apply
 Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+No provider.
+
+## Inputs
+
+No input.
+
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm |
 | this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm |
-| this\_lambda\_function1\_arn |  |
-| this\_lambda\_function1\_name |  |
+| this\_lambda\_function1\_arn | n/a |
+| this\_lambda\_function1\_name | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
