@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v1.1.0"></a>
+## [v1.1.0] - 2020-05-11
+
+- docs: Updated README
+- fix: Changing metric_transformation_value var type to string ([#11](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/11))
+
+
 <a name="v1.0.0"></a>
 ## [v1.0.0] - 2020-03-25
 
@@ -28,6 +35,7 @@ All notable changes to this project will be documented in this file.
 - Added log-metric-filter and metric-alarm module
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v0.2.0...v1.0.0
 [v0.2.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v0.1.0...v0.2.0
