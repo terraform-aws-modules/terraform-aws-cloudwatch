@@ -3,6 +3,10 @@
 Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html) and stay secure.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
 ## Providers
 
 | Name | Version |
@@ -13,7 +17,7 @@ Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/secur
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | actions\_enabled | Indicates whether or not actions should be executed during any changes to the alarm's state. | `bool` | `true` | no |
 | alarm\_actions | List of ARNs to put as Cloudwatch Alarms actions (eg, ARN of SNS topic) | `list(string)` | `[]` | no |
 | create | Whether to create the Cloudwatch log metric filter and metric alarms | `bool` | `true` | no |
