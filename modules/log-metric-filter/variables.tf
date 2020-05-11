@@ -32,8 +32,8 @@ variable "metric_transformation_namespace" {
 
 variable "metric_transformation_value" {
   description = "What to publish to the metric. For example, if you're counting the occurrences of a particular term like 'Error', the value will be '1' for each occurrence. If you're counting the bytes transferred the published value will be the value in the log event."
-  type        = number
-  default     = 1
+  type        = string
+  default     = "1"
 }
 
 variable "metric_transformation_default_value" {
