@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 <a name="unreleased"></a>
 ## [Unreleased]
 
-
+- Added default value of 0 for metric filters
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2020-05-11
