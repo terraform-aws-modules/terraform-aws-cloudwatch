@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- Added default value of 0 for metric filters
+
+
+<a name="v1.2.0"></a>
+## [v1.2.0] - 2020-05-20
+
+- feat: Added default value of 0 for metric filter for cis-alarms ([#12](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/12))
+
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2020-05-11
@@ -35,7 +41,8 @@ All notable changes to this project will be documented in this file.
 - Added log-metric-filter and metric-alarm module
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.2.0...HEAD
+[v1.2.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v0.2.0...v1.0.0
 [v0.2.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v0.1.0...v0.2.0
