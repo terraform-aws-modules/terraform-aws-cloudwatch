@@ -95,9 +95,10 @@ resource "aws_cloudwatch_log_metric_filter" "this" {
   log_group_name = lookup(each.value, "log_group_name", var.log_group_name)
 
   metric_transformation {
-    name      = each.key
-    namespace = lookup(each.value, "namespace", var.namespace)
-    value     = 1
+    name          = each.key
+    namespace     = lookup(each.value, "namespace", var.namespace)
+    value         = 1
+    default_value = 0
   }
 }
 
