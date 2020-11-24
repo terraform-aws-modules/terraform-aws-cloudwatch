@@ -14,7 +14,7 @@ module "aws_sns_topic" {
   source = "../fixtures/aws_sns_topic"
 }
 
-// Alarm - "there is at least one error in a minute in AWS Lambda functions"
+# Alarm - "there is at least one error in a minute in AWS Lambda functions"
 module "all_lambdas_errors_alarm" {
   source = "../../modules/metric-alarm"
 
