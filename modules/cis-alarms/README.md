@@ -5,14 +5,18 @@ Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/secur
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.6 |
+| aws | >= 2.55 |
+| random | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
-| random | n/a |
+| aws | >= 2.55 |
+| random | >= 2.0 |
 
 ## Inputs
 

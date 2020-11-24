@@ -17,7 +17,10 @@ Note that this example may create resources which cost money. Run `terraform des
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.6 |
+| aws | >= 2.55 |
 
 ## Providers
 
@@ -33,7 +36,7 @@ No input.
 |------|-------------|
 | this\_cloudwatch\_metric\_alarm\_arns | List of ARN of the Cloudwatch metric alarms |
 | this\_cloudwatch\_metric\_alarm\_ids | List of ID of the Cloudwatch metric alarms |
-| this\_lambda\_function1\_arn | n/a |
-| this\_lambda\_function1\_name | n/a |
+| this\_lambda\_function1\_arn | Lambda function ARN |
+| this\_lambda\_function1\_name | Lambda function name |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
