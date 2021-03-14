@@ -4,12 +4,8 @@ Terraform module which creates Cloudwatch resources on AWS.
 
 This type of resources are supported:
 
-* [Log metric filter](https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html)
-* [Metric alarm](https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html)
-
-## Terraform versions
-
-Only Terraform 0.12 is supported.
+- [Log metric filter](https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html)
+- [Metric alarm](https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html)
 
 ## Usage
 
@@ -92,7 +88,7 @@ module "metric_alarms" {
 Check out [list of all AWS services that publish CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) for detailed information about each supported service.
 
 ### CIS AWS Foundations Controls: Metrics + Alarms
- 
+
 ```hcl
 module "cis_alarms" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/cis-alarms"
@@ -107,13 +103,12 @@ AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module cre
 
 ## Examples
 
-* [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
-* [Cloudwatch metric alarms for AWS Lambda](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/lambda-metric-alarm)
-* [Cloudwatch metric alarms for AWS Lambda with multiple dimensions](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-alarms-by-multiple-dimensions)
-* [CIS AWS Foundations Controls: Metrics + Alarms](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/cis-alarms)
+- [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
+- [Cloudwatch metric alarms for AWS Lambda](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/lambda-metric-alarm)
+- [Cloudwatch metric alarms for AWS Lambda with multiple dimensions](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-alarms-by-multiple-dimensions)
+- [CIS AWS Foundations Controls: Metrics + Alarms](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/cis-alarms)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Authors

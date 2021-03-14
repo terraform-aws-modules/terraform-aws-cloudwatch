@@ -5,7 +5,7 @@
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.6 |
+| terraform | >= 0.12.26 |
 | aws | >= 2.55 |
 
 ## Providers
@@ -13,6 +13,16 @@
 | Name | Version |
 |------|---------|
 | aws | >= 2.55 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_cloudwatch_metric_alarm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) |
 
 ## Inputs
 
@@ -47,5 +57,4 @@
 |------|-------------|
 | this\_cloudwatch\_metric\_alarm\_arns | List of ARN of the Cloudwatch metric alarms |
 | this\_cloudwatch\_metric\_alarm\_ids | List of ID of the Cloudwatch metric alarms |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
