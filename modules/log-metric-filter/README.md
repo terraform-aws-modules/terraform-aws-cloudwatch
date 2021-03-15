@@ -5,7 +5,7 @@
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.6 |
+| terraform | >= 0.12.26 |
 | aws | >= 2.55 |
 
 ## Providers
@@ -13,6 +13,16 @@
 | Name | Version |
 |------|---------|
 | aws | >= 2.55 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_cloudwatch_log_metric_filter](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_metric_filter) |
 
 ## Inputs
 
@@ -32,5 +42,4 @@
 | Name | Description |
 |------|-------------|
 | this\_cloudwatch\_log\_metric\_filter\_id | The name of the metric filter |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

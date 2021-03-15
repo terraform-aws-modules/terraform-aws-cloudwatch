@@ -19,12 +19,25 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.6 |
+| terraform | >= 0.12.26 |
 | aws | >= 2.55 |
 
 ## Providers
 
 No provider.
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| alarm | ../../modules/metric-alarm |  |
+| aws_sns_topic | ../fixtures/aws_sns_topic |  |
+| log | ../fixtures/aws_cloudwatch_log_group |  |
+| log_metric_filter | ../../modules/log-metric-filter |  |
+
+## Resources
+
+No resources.
 
 ## Inputs
 
@@ -37,5 +50,4 @@ No input.
 | this\_cloudwatch\_log\_metric\_filter\_id | The name of the metric filter |
 | this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm |
 | this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

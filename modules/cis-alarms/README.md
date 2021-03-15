@@ -7,7 +7,7 @@ Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/secur
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.6 |
+| terraform | >= 0.12.26 |
 | aws | >= 2.55 |
 | random | >= 2.0 |
 
@@ -17,6 +17,18 @@ Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/secur
 |------|---------|
 | aws | >= 2.55 |
 | random | >= 2.0 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_cloudwatch_log_metric_filter](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_metric_filter) |
+| [aws_cloudwatch_metric_alarm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) |
+| [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
 
 ## Inputs
 
@@ -37,5 +49,4 @@ Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/secur
 |------|-------------|
 | this\_cloudwatch\_metric\_alarm\_arns | List of ARNs of the Cloudwatch metric alarm |
 | this\_cloudwatch\_metric\_alarm\_ids | List of IDs of the Cloudwatch metric alarm |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

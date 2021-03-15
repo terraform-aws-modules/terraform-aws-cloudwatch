@@ -19,12 +19,25 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.6 |
+| terraform | >= 0.12.26 |
 | aws | >= 2.55 |
 
 ## Providers
 
 No provider.
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| all_cis_alarms | ../../modules/cis-alarms |  |
+| aws_sns_topic | ../fixtures/aws_sns_topic |  |
+| disabled_all_cis_alarms | ../../modules/cis-alarms |  |
+| log | ../fixtures/aws_cloudwatch_log_group |  |
+
+## Resources
+
+No resources.
 
 ## Inputs
 
@@ -36,5 +49,4 @@ No input.
 |------|-------------|
 | this\_cloudwatch\_metric\_alarm\_arns | List of ARNs of the Cloudwatch metric alarm |
 | this\_cloudwatch\_metric\_alarm\_ids | List of IDs of the Cloudwatch metric alarm |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

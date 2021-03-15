@@ -19,12 +19,25 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.6 |
+| terraform | >= 0.12.26 |
 | aws | >= 2.55 |
 
 ## Providers
 
 No provider.
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| alarms | ../../modules/metric-alarms-by-multiple-dimensions |  |
+| aws_lambda_function1 | ../fixtures/aws_lambda_function |  |
+| aws_lambda_function2 | ../fixtures/aws_lambda_function |  |
+| aws_sns_topic | ../fixtures/aws_sns_topic |  |
+
+## Resources
+
+No resources.
 
 ## Inputs
 
@@ -38,5 +51,4 @@ No input.
 | this\_cloudwatch\_metric\_alarm\_ids | List of ID of the Cloudwatch metric alarms |
 | this\_lambda\_function1\_arn | Lambda function ARN |
 | this\_lambda\_function1\_name | Lambda function name |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
