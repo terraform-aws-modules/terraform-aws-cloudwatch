@@ -19,21 +19,21 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.26 |
-| aws | >= 2.55 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.26 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.55 |
 
 ## Providers
 
-No provider.
+No providers.
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| alarm | ../../modules/metric-alarm |  |
-| aws_sns_topic | ../fixtures/aws_sns_topic |  |
-| log | ../fixtures/aws_cloudwatch_log_group |  |
-| log_metric_filter | ../../modules/log-metric-filter |  |
+| <a name="module_alarm"></a> [alarm](#module\_alarm) | ../../modules/metric-alarm |  |
+| <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic |  |
+| <a name="module_log"></a> [log](#module\_log) | ../fixtures/aws_cloudwatch_log_group |  |
+| <a name="module_log_metric_filter"></a> [log\_metric\_filter](#module\_log\_metric\_filter) | ../../modules/log-metric-filter |  |
 
 ## Resources
 
@@ -41,13 +41,13 @@ No resources.
 
 ## Inputs
 
-No input.
+No inputs.
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| this\_cloudwatch\_log\_metric\_filter\_id | The name of the metric filter |
-| this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm |
-| this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm |
+| <a name="output_this_cloudwatch_log_metric_filter_id"></a> [this\_cloudwatch\_log\_metric\_filter\_id](#output\_this\_cloudwatch\_log\_metric\_filter\_id) | The name of the metric filter |
+| <a name="output_this_cloudwatch_metric_alarm_arn"></a> [this\_cloudwatch\_metric\_alarm\_arn](#output\_this\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
+| <a name="output_this_cloudwatch_metric_alarm_id"></a> [this\_cloudwatch\_metric\_alarm\_id](#output\_this\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
