@@ -19,23 +19,23 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.26 |
-| aws | >= 2.55 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.26 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.55 |
 
 ## Providers
 
-No provider.
+No providers.
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| alarm | ../../modules/metric-alarm |  |
-| alarm_metric_query | ../../modules/metric-alarm |  |
-| all_lambdas_errors_alarm | ../../modules/metric-alarm |  |
-| aws_lambda_function1 | ../fixtures/aws_lambda_function |  |
-| aws_lambda_function2 | ../fixtures/aws_lambda_function |  |
-| aws_sns_topic | ../fixtures/aws_sns_topic |  |
+| <a name="module_alarm"></a> [alarm](#module\_alarm) | ../../modules/metric-alarm |  |
+| <a name="module_alarm_metric_query"></a> [alarm\_metric\_query](#module\_alarm\_metric\_query) | ../../modules/metric-alarm |  |
+| <a name="module_all_lambdas_errors_alarm"></a> [all\_lambdas\_errors\_alarm](#module\_all\_lambdas\_errors\_alarm) | ../../modules/metric-alarm |  |
+| <a name="module_aws_lambda_function1"></a> [aws\_lambda\_function1](#module\_aws\_lambda\_function1) | ../fixtures/aws_lambda_function |  |
+| <a name="module_aws_lambda_function2"></a> [aws\_lambda\_function2](#module\_aws\_lambda\_function2) | ../fixtures/aws_lambda_function |  |
+| <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic |  |
 
 ## Resources
 
@@ -43,14 +43,14 @@ No resources.
 
 ## Inputs
 
-No input.
+No inputs.
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| this\_cloudwatch\_metric\_alarm\_arn | The ARN of the Cloudwatch metric alarm |
-| this\_cloudwatch\_metric\_alarm\_id | The ID of the Cloudwatch metric alarm |
-| this\_lambda\_function1\_arn | Lambda function ARN |
-| this\_lambda\_function1\_name | Lambda function name |
+| <a name="output_this_cloudwatch_metric_alarm_arn"></a> [this\_cloudwatch\_metric\_alarm\_arn](#output\_this\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
+| <a name="output_this_cloudwatch_metric_alarm_id"></a> [this\_cloudwatch\_metric\_alarm\_id](#output\_this\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |
+| <a name="output_this_lambda_function1_arn"></a> [this\_lambda\_function1\_arn](#output\_this\_lambda\_function1\_arn) | Lambda function ARN |
+| <a name="output_this_lambda_function1_name"></a> [this\_lambda\_function1\_name](#output\_this\_lambda\_function1\_name) | Lambda function name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
