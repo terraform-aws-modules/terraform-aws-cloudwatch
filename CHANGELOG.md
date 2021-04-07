@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v1.4.0"></a>
+## [v1.4.0] - 2021-04-07
+
+- fix: change UnauthorizedAPICalls description according to AWS CIS guide ([#20](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/20))
+- chore: update documentation and pin `terraform_docs` version to avoid future changes ([#19](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/19))
+- chore: add ci-cd workflow for pre-commit checks ([#17](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/17))
+
+
 <a name="v1.3.0"></a>
 ## [v1.3.0] - 2020-11-24
 
@@ -30,6 +38,18 @@ All notable changes to this project will be documented in this file.
 ## [v1.0.0] - 2020-03-25
 
 - feat: Added cis-alarms as CIS AWS Foundations Controls ([#10](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/10))
+- Merge pull request [#9](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/9) from terraform-aws-modules/terraform-provider-githubfile-1584635096252900000
+- [ci skip] Create ".chglog/CHANGELOG.tpl.md".
+- Merge pull request [#5](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/5) from terraform-aws-modules/terraform-provider-githubfile-1584535788164202000
+- Merge pull request [#6](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/6) from terraform-aws-modules/terraform-provider-githubfile-1584535788163868000
+- Merge pull request [#7](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/7) from terraform-aws-modules/terraform-provider-githubfile-1584535788164201000
+- Merge pull request [#8](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/8) from terraform-aws-modules/terraform-provider-githubfile-1584535788163754000
+- Merge pull request [#4](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/4) from terraform-aws-modules/terraform-provider-githubfile-1584535788163769000
+- [ci skip] Create "LICENSE".
+- [ci skip] Create ".pre-commit-config.yaml".
+- [ci skip] Create ".editorconfig".
+- [ci skip] Create ".gitignore".
+- [ci skip] Create "Makefile".
 
 
 <a name="v0.2.0"></a>
@@ -47,7 +67,8 @@ All notable changes to this project will be documented in this file.
 - Added log-metric-filter and metric-alarm module
 
 
-[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.4.0...HEAD
+[v1.4.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v1.0.0...v1.1.0
