@@ -2,7 +2,7 @@ locals {
   all_controls = {
     UnauthorizedAPICalls = {
       pattern     = "{ ($.errorCode = \"*UnauthorizedOperation\") || ($.errorCode = \"AccessDenied*\") }"
-      description = "Monitoring changes to security group will help ensure that resources and services are not unintentionally exposed."
+      description = "Monitoring unauthorized API calls will help reveal application errors and may reduce time to detect malicious activity."
     }
 
     NoMFAConsoleSignin = {
