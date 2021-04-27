@@ -41,5 +41,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this_cloudwatch_log_metric_filter_id"></a> [this\_cloudwatch\_log\_metric\_filter\_id](#output\_this\_cloudwatch\_log\_metric\_filter\_id) | The name of the metric filter |
+| <a name="output_cloudwatch_log_metric_filter_id"></a> [cloudwatch\_log\_metric\_filter\_id](#output\_cloudwatch\_log\_metric\_filter\_id) | The name of the metric filter |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

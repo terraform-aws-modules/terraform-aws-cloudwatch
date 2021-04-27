@@ -31,12 +31,12 @@ module "alarms" {
 
   dimensions = {
     "lambda1" = {
-      FunctionName = module.aws_lambda_function1.this_lambda_function_name
+      FunctionName = module.aws_lambda_function1.lambda_function_name
     },
     "lambda2" = {
-      FunctionName = module.aws_lambda_function2.this_lambda_function_name
+      FunctionName = module.aws_lambda_function2.lambda_function_name
     },
   }
 
-  alarm_actions = [module.aws_sns_topic.this_sns_topic_arn]
+  alarm_actions = [module.aws_sns_topic.sns_topic_arn]
 }

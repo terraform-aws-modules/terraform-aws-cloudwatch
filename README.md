@@ -14,7 +14,7 @@ This type of resources are supported:
 ```hcl
 module "log_metric_filter" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/log-metric-filter"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   log_group_name = "my-application-logs"
 
@@ -33,7 +33,7 @@ Read [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/la
 ```hcl
 module "metric_alarm" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/metric-alarm"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   alarm_name          = "my-application-logs-errors"
   alarm_description   = "Bad errors in my-application-logs"
@@ -58,7 +58,7 @@ This submodule is useful when you need to create very similar alarms where only 
 ```hcl
 module "metric_alarms" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/metric-alarms-by-multiple-dimensions"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   alarm_name          = "lambda-duration-"
   alarm_description   = "Lambda duration is too high"
@@ -92,7 +92,7 @@ Check out [list of all AWS services that publish CloudWatch metrics](https://doc
 ```hcl
 module "cis_alarms" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/cis-alarms"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   log_group_name = "my-cloudtrail-logs"
   alarm_actions  = ["arn:aws:sns:eu-west-1:835367859852:my-sns-queue"]

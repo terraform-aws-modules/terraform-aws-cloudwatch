@@ -55,6 +55,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this_cloudwatch_metric_alarm_arns"></a> [this\_cloudwatch\_metric\_alarm\_arns](#output\_this\_cloudwatch\_metric\_alarm\_arns) | List of ARN of the Cloudwatch metric alarms |
-| <a name="output_this_cloudwatch_metric_alarm_ids"></a> [this\_cloudwatch\_metric\_alarm\_ids](#output\_this\_cloudwatch\_metric\_alarm\_ids) | List of ID of the Cloudwatch metric alarms |
+| <a name="output_cloudwatch_metric_alarm_arns"></a> [cloudwatch\_metric\_alarm\_arns](#output\_cloudwatch\_metric\_alarm\_arns) | List of ARN of the Cloudwatch metric alarms |
+| <a name="output_cloudwatch_metric_alarm_ids"></a> [cloudwatch\_metric\_alarm\_ids](#output\_cloudwatch\_metric\_alarm\_ids) | List of ID of the Cloudwatch metric alarms |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

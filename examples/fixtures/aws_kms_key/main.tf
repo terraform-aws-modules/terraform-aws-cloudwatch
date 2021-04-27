@@ -4,5 +4,4 @@ resource "random_pet" "this" {
 
 resource "aws_kms_key" "this" {
   description = "fixtures-${random_pet.this.id}"
-
 }

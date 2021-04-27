@@ -15,8 +15,8 @@ module "all_cis_alarms" {
 
   disabled_controls = ["DisableOrDeleteCMK", "VPCChanges"]
 
-  log_group_name = module.log.this_cloudwatch_log_group_name
-  alarm_actions  = [module.aws_sns_topic.this_sns_topic_arn]
+  log_group_name = module.log.cloudwatch_log_group_name
+  alarm_actions  = [module.aws_sns_topic.sns_topic_arn]
 }
 
 # These alarms won't be created
@@ -27,6 +27,6 @@ module "disabled_all_cis_alarms" {
 
   use_random_name_prefix = true
 
-  log_group_name = module.log.this_cloudwatch_log_group_name
-  alarm_actions  = [module.aws_sns_topic.this_sns_topic_arn]
+  log_group_name = module.log.cloudwatch_log_group_name
+  alarm_actions  = [module.aws_sns_topic.sns_topic_arn]
 }
