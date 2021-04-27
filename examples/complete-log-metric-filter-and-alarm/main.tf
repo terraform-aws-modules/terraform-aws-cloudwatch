@@ -18,7 +18,7 @@ locals {
 module "log_metric_filter" {
   source = "../../modules/log-metric-filter"
 
-  log_group_name = module.log.this_cloudwatch_log_group_name
+  log_group_name = module.log.cloudwatch_log_group_name
 
   name    = "metric-${module.log.random_id}"
   pattern = "ERROR"
@@ -42,5 +42,5 @@ module "alarm" {
   metric_name = local.metric_transformation_name
   statistic   = "Sum"
 
-  alarm_actions = [module.aws_sns_topic.this_sns_topic_arn]
+  alarm_actions = [module.aws_sns_topic.sns_topic_arn]
 }

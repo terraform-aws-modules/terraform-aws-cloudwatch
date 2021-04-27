@@ -30,7 +30,7 @@ module "all_lambdas_errors_alarm" {
   metric_name = "Errors"
   statistic   = "Maximum"
 
-  alarm_actions = [module.aws_sns_topic.this_sns_topic_arn]
+  alarm_actions = [module.aws_sns_topic.sns_topic_arn]
 }
 
 module "alarm" {
@@ -49,10 +49,10 @@ module "alarm" {
   statistic   = "Maximum"
 
   dimensions = {
-    FunctionName = module.aws_lambda_function1.this_lambda_function_name
+    FunctionName = module.aws_lambda_function1.lambda_function_name
   }
 
-  alarm_actions = [module.aws_sns_topic.this_sns_topic_arn]
+  alarm_actions = [module.aws_sns_topic.sns_topic_arn]
 }
 
 module "alarm_metric_query" {
@@ -81,7 +81,7 @@ module "alarm_metric_query" {
       unit        = "Count"
 
       dimensions = {
-        FunctionName = module.aws_lambda_function2.this_lambda_function_name
+        FunctionName = module.aws_lambda_function2.lambda_function_name
       }
     }]
     }, {
@@ -95,12 +95,12 @@ module "alarm_metric_query" {
       unit        = "Count"
 
       dimensions = {
-        FunctionName = module.aws_lambda_function2.this_lambda_function_name
+        FunctionName = module.aws_lambda_function2.lambda_function_name
       }
     }]
   }]
 
-  alarm_actions = [module.aws_sns_topic.this_sns_topic_arn]
+  alarm_actions = [module.aws_sns_topic.sns_topic_arn]
 
   tags = {
     Secure = "maybe"

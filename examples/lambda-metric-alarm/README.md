@@ -49,8 +49,8 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this_cloudwatch_metric_alarm_arn"></a> [this\_cloudwatch\_metric\_alarm\_arn](#output\_this\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
-| <a name="output_this_cloudwatch_metric_alarm_id"></a> [this\_cloudwatch\_metric\_alarm\_id](#output\_this\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |
-| <a name="output_this_lambda_function1_arn"></a> [this\_lambda\_function1\_arn](#output\_this\_lambda\_function1\_arn) | Lambda function ARN |
-| <a name="output_this_lambda_function1_name"></a> [this\_lambda\_function1\_name](#output\_this\_lambda\_function1\_name) | Lambda function name |
+| <a name="output_cloudwatch_metric_alarm_arn"></a> [cloudwatch\_metric\_alarm\_arn](#output\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
+| <a name="output_cloudwatch_metric_alarm_id"></a> [cloudwatch\_metric\_alarm\_id](#output\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |
+| <a name="output_lambda_function1_arn"></a> [lambda\_function1\_arn](#output\_lambda\_function1\_arn) | Lambda function ARN |
+| <a name="output_lambda_function1_name"></a> [lambda\_function1\_name](#output\_lambda\_function1\_name) | Lambda function name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

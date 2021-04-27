@@ -47,7 +47,7 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this_cloudwatch_log_metric_filter_id"></a> [this\_cloudwatch\_log\_metric\_filter\_id](#output\_this\_cloudwatch\_log\_metric\_filter\_id) | The name of the metric filter |
-| <a name="output_this_cloudwatch_metric_alarm_arn"></a> [this\_cloudwatch\_metric\_alarm\_arn](#output\_this\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
-| <a name="output_this_cloudwatch_metric_alarm_id"></a> [this\_cloudwatch\_metric\_alarm\_id](#output\_this\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |
+| <a name="output_cloudwatch_log_metric_filter_id"></a> [cloudwatch\_log\_metric\_filter\_id](#output\_cloudwatch\_log\_metric\_filter\_id) | The name of the metric filter |
+| <a name="output_cloudwatch_metric_alarm_arn"></a> [cloudwatch\_metric\_alarm\_arn](#output\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
+| <a name="output_cloudwatch_metric_alarm_id"></a> [cloudwatch\_metric\_alarm\_id](#output\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
