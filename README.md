@@ -2,11 +2,6 @@
 
 Terraform module which creates Cloudwatch resources on AWS.
 
-This type of resources are supported:
-
-- [Log metric filter](https://www.terraform.io/docs/providers/aws/r/cloudwatch_log_metric_filter.html)
-- [Metric alarm](https://www.terraform.io/docs/providers/aws/r/cloudwatch_metric_alarm.html)
-
 ## Usage
 
 ### Log metric filter
@@ -113,10 +108,8 @@ AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module cre
 
 ## Authors
 
-Module managed by [Anton Babenko](https://github.com/antonbabenko).
-
-The development of this module was sponsored by [indebted.co](https://www.indebted.co/?utm_source=terraform-aws-cloudwatch).
+Module is maintained by [Anton Babenko](https://github.com/antonbabenko) with help from [these awesome contributors](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/graphs/contributors).
 
 ## License
 
-Apache 2 Licensed. See LICENSE for full details.
+Apache 2 Licensed. See [LICENSE](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/LICENSE) for full details.
