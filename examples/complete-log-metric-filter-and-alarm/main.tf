@@ -6,8 +6,10 @@ module "aws_sns_topic" {
   source = "../fixtures/aws_sns_topic"
 }
 
-module "log" {
-  source = "../fixtures/aws_cloudwatch_log_group"
+module "log_group" {
+  source = "../../modules/log-group"
+
+  name_prefix = "my-app-"
 }
 
 locals {
@@ -18,9 +20,9 @@ locals {
 module "log_metric_filter" {
   source = "../../modules/log-metric-filter"
 
-  log_group_name = module.log.cloudwatch_log_group_name
+  log_group_name = module.log_group.cloudwatch_log_group_name
 
-  name    = "metric-${module.log.random_id}"
+  name    = "metric-${module.log_group.cloudwatch_log_group_name}"
   pattern = "ERROR"
 
   metric_transformation_namespace = local.metric_transformation_namespace
@@ -30,7 +32,7 @@ module "log_metric_filter" {
 module "alarm" {
   source = "../../modules/metric-alarm"
 
-  alarm_name          = "log-errors-${module.log.random_id}"
+  alarm_name          = "log-errors-${module.log_group.cloudwatch_log_group_name}"
   alarm_description   = "Log errors are too high"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1

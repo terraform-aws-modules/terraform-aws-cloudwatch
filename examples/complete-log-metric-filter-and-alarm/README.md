@@ -32,7 +32,7 @@ No providers.
 |------|--------|---------|
 | <a name="module_alarm"></a> [alarm](#module\_alarm) | ../../modules/metric-alarm |  |
 | <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic |  |
-| <a name="module_log"></a> [log](#module\_log) | ../fixtures/aws_cloudwatch_log_group |  |
+| <a name="module_log_group"></a> [log\_group](#module\_log\_group) | ../../modules/log-group |  |
 | <a name="module_log_metric_filter"></a> [log\_metric\_filter](#module\_log\_metric\_filter) | ../../modules/log-metric-filter |  |
 
 ## Resources
@@ -47,6 +47,8 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_cloudwatch_log_group_arn"></a> [cloudwatch\_log\_group\_arn](#output\_cloudwatch\_log\_group\_arn) | ARN of Cloudwatch log group |
+| <a name="output_cloudwatch_log_group_name"></a> [cloudwatch\_log\_group\_name](#output\_cloudwatch\_log\_group\_name) | Name of Cloudwatch log group |
 | <a name="output_cloudwatch_log_metric_filter_id"></a> [cloudwatch\_log\_metric\_filter\_id](#output\_cloudwatch\_log\_metric\_filter\_id) | The name of the metric filter |
 | <a name="output_cloudwatch_metric_alarm_arn"></a> [cloudwatch\_metric\_alarm\_arn](#output\_cloudwatch\_metric\_alarm\_arn) | The ARN of the Cloudwatch metric alarm |
 | <a name="output_cloudwatch_metric_alarm_id"></a> [cloudwatch\_metric\_alarm\_id](#output\_cloudwatch\_metric\_alarm\_id) | The ID of the Cloudwatch metric alarm |

@@ -23,6 +23,18 @@ module "log_metric_filter" {
 
 Read [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) for explanation of `pattern`.
 
+### Log group
+
+```hcl
+module "log_group" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/log-group"
+  version = "~> 2.0"
+
+  name              = "my-app"
+  retention_in_days = 120
+}
+```
+
 ### Metric alarm
 
 ```hcl
