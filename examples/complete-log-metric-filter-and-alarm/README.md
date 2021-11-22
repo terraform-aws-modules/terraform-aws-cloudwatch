@@ -30,10 +30,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_alarm"></a> [alarm](#module\_alarm) | ../../modules/metric-alarm |  |
-| <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic |  |
-| <a name="module_log_group"></a> [log\_group](#module\_log\_group) | ../../modules/log-group |  |
-| <a name="module_log_metric_filter"></a> [log\_metric\_filter](#module\_log\_metric\_filter) | ../../modules/log-metric-filter |  |
+| <a name="module_alarm"></a> [alarm](#module\_alarm) | ../../modules/metric-alarm | n/a |
+| <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic | n/a |
+| <a name="module_log_group"></a> [log\_group](#module\_log\_group) | ../../modules/log-group | n/a |
+| <a name="module_log_metric_filter"></a> [log\_metric\_filter](#module\_log\_metric\_filter) | ../../modules/log-metric-filter | n/a |
 
 ## Resources
 
