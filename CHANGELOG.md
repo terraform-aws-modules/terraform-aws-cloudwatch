@@ -1,3 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+# [2.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.1.0...v2.2.0) (2021-12-14)
+
+
+### Bug Fixes
+
+* update CI/CD process to enable auto-release workflow ([#27](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/27)) ([12b9abb](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/12b9abbfd678ca97e856a33a102d76d71c1a7e43))
+
+
+### Features
+
+* Update CIS-Alarms for v1.4.0 of the AWS Benchmark ([#26](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/26)) ([fd33034](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/fd3303464a3ad31a91e21bdf09ab572f387650f8))
+
 <a name="v2.1.0"></a>
 ## [v2.1.0] - 2021-05-03
 
