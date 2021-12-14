@@ -30,10 +30,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_alarms"></a> [alarms](#module\_alarms) | ../../modules/metric-alarms-by-multiple-dimensions |  |
-| <a name="module_aws_lambda_function1"></a> [aws\_lambda\_function1](#module\_aws\_lambda\_function1) | ../fixtures/aws_lambda_function |  |
-| <a name="module_aws_lambda_function2"></a> [aws\_lambda\_function2](#module\_aws\_lambda\_function2) | ../fixtures/aws_lambda_function |  |
-| <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic |  |
+| <a name="module_alarms"></a> [alarms](#module\_alarms) | ../../modules/metric-alarms-by-multiple-dimensions | n/a |
+| <a name="module_aws_lambda_function1"></a> [aws\_lambda\_function1](#module\_aws\_lambda\_function1) | ../fixtures/aws_lambda_function | n/a |
+| <a name="module_aws_lambda_function2"></a> [aws\_lambda\_function2](#module\_aws\_lambda\_function2) | ../fixtures/aws_lambda_function | n/a |
+| <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic | n/a |
 
 ## Resources
 
