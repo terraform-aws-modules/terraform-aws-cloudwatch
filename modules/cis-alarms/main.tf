@@ -78,7 +78,7 @@ locals {
 
   ###############
 
-  prefix   = var.use_random_name_prefix ? "${random_pet.this[0].id}-" : length(var.name_prefix) > 0 ? var.name_prefix : ""
+  prefix   = var.use_random_name_prefix ? "${random_pet.this[0].id}-" : var.name_prefix
   controls = { for k, v in local.all_controls : k => v if !contains(var.disabled_controls, k) }
 }
 

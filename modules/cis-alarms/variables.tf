@@ -11,7 +11,7 @@ variable "use_random_name_prefix" {
 }
 
 variable "name_prefix" {
-  description = "A name prefix for the cloudwatch alarm, if use_random_name_prefix is true, this will be ignored)"
+  description = "A name prefix for the cloudwatch alarm (if use_random_name_prefix is true, this will be ignored)"
   type        = string
   default     = ""
 }
