@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.2.0...v2.3.0) (2021-12-15)
+
+
+### Features
+
+* Added support for custom CIS alarm names ([#29](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/29)) ([9d5d1c4](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/9d5d1c42345ec5f9b01a129a18852a62a93a0267))
+
 # [2.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.1.0...v2.2.0) (2021-12-14)
 
 
