@@ -10,6 +10,12 @@ variable "use_random_name_prefix" {
   default     = false
 }
 
+variable "name_prefix" {
+  description = "A name prefix for the cloudwatch alarm (if use_random_name_prefix is true, this will be ignored)"
+  type        = string
+  default     = ""
+}
+
 variable "disabled_controls" {
   description = "List of IDs of disabled CIS controls"
   type        = list(string)
