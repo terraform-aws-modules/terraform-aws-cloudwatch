@@ -39,6 +39,7 @@ No modules.
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the Cloudwatch log metric filter and metric alarms | `bool` | `true` | no |
 | <a name="input_disabled_controls"></a> [disabled\_controls](#input\_disabled\_controls) | List of IDs of disabled CIS controls | `list(string)` | `[]` | no |
 | <a name="input_log_group_name"></a> [log\_group\_name](#input\_log\_group\_name) | The name of the log group to associate the metric filter with | `string` | `""` | no |
+| <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | A name prefix for the cloudwatch alarm, if use\_random\_name\_prefix is true, this will be ignored) | `string` | `""` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | The namespace where metric filter and metric alarm should be cleated | `string` | `"CISBenchmark"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to all resources | `map(string)` | `{}` | no |
 | <a name="input_use_random_name_prefix"></a> [use\_random\_name\_prefix](#input\_use\_random\_name\_prefix) | Whether to prefix resource names with random prefix | `bool` | `false` | no |
