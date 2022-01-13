@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [2.3.1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.3.0...v2.3.1) (2022-01-13)
+
+
+### Bug Fixes
+
+* Added prefix to metric name for alarm to work ([#32](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/32)) ([f1c750f](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/f1c750fb79a82c1b3fbc76ec2e0df6c768e6fa9a))
+
 # [2.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.2.0...v2.3.0) (2021-12-15)
 
 
