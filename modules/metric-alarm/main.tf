@@ -32,6 +32,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
     for_each = var.metric_query
     content {
       id          = lookup(metric_query.value, "id")
+      account_id  = lookup(metric_query.value, "account_id", null)
       label       = lookup(metric_query.value, "label", null)
       return_data = lookup(metric_query.value, "return_data", null)
       expression  = lookup(metric_query.value, "expression", null)
