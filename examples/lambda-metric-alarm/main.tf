@@ -146,10 +146,3 @@ module "alarm_anomaly" {
     Secure = "maybe"
   }
 }
-
-metric_query {
-    id          = "ad1"
-    expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
-    label       = "Delivery (expected)"
-    return_data = "true"
-  }
