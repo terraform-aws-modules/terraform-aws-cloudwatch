@@ -138,6 +138,7 @@ module "alarm_anomaly" {
           FunctionName = module.aws_lambda_function2.lambda_function_name
         }
       }]
+      return_data = "true"
   }]
 
   alarm_actions = [module.aws_sns_topic.sns_topic_arn]
