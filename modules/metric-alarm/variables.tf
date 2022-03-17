@@ -30,6 +30,12 @@ variable "threshold" {
   type        = number
 }
 
+variable "threshold_metric_id" {
+  description = "If this is an alarm based on an anomaly detection model, make this value match the ID of the ANOMALY_DETECTION_BAND function."
+  type        = string
+  default     = null
+}
+
 variable "unit" {
   description = "The unit for the alarm's associated metric."
   type        = string

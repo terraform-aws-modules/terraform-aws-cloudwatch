@@ -106,3 +106,50 @@ module "alarm_metric_query" {
     Secure = "maybe"
   }
 }
+
+module "alarm_anomaly" {
+  source = "../../modules/metric-alarm"
+
+  alarm_name          = "lambda-invocations-anomaly-${module.aws_lambda_function2.random_id}"
+  alarm_description   = "Lambda invocations anomaly"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = 1
+  threshold_metric_id = "ad1"
+
+  metric_query = [{
+      id = "ad1"
+
+      return_data = true
+      expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
+      label       = "Invocations (expected)"
+      return_data = "true"
+    },
+    {
+      id = "m1"
+
+      metric = [{
+        namespace   = "AWS/Lambda"
+        metric_name = "Invocations"
+        period      = 60
+        stat        = "Sum"
+        unit        = "Count"
+
+        dimensions = {
+          FunctionName = module.aws_lambda_function2.lambda_function_name
+        }
+      }]
+  }]
+
+  alarm_actions = [module.aws_sns_topic.sns_topic_arn]
+
+  tags = {
+    Secure = "maybe"
+  }
+}
+
+metric_query {
+    id          = "ad1"
+    expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
+    label       = "Delivery (expected)"
+    return_data = "true"
+  }
