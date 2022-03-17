@@ -117,12 +117,12 @@ module "alarm_anomaly" {
   threshold_metric_id = "ad1"
 
   metric_query = [{
-      id = "ad1"
+    id = "ad1"
 
-      return_data = true
-      expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
-      label       = "Invocations (expected)"
-      return_data = "true"
+    return_data = true
+    expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
+    label       = "Invocations (expected)"
+    return_data = "true"
     },
     {
       id = "m1"
