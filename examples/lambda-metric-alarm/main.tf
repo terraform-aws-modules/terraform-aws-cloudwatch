@@ -112,7 +112,7 @@ module "alarm_anomaly" {
 
   alarm_name          = "lambda-invocations-anomaly-${module.aws_lambda_function2.random_id}"
   alarm_description   = "Lambda invocations anomaly"
-  comparison_operator = "GreaterThanOrEqualToThreshold"
+  comparison_operator = "LessThanLowerOrGreaterThanUpperThreshold"
   evaluation_periods  = 1
   threshold_metric_id = "ad1"
 
