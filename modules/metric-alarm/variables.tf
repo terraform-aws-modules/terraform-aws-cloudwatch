@@ -28,6 +28,7 @@ variable "evaluation_periods" {
 variable "threshold" {
   description = "The value against which the specified statistic is compared."
   type        = number
+  default     = null
 }
 
 variable "threshold_metric_id" {
