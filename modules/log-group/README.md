@@ -23,6 +23,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_cloudwatch_log_resource_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_resource_policy) | resource |
 
 ## Inputs
 
@@ -32,6 +33,7 @@ No modules.
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | The ARN of the KMS Key to use when encrypting logs | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | A name for the log group | `string` | `null` | no |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | A name prefix for the log group | `string` | `null` | no |
+| <a name="input_resource_policies"></a> [resource\_policies](#input\_resource\_policies) | The resource policies to attach to the Cloudwatch log group mapped name to document | `map(string)` | `{}` | no |
 | <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | Specifies the number of days you want to retain log events in the specified log group | `number` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to Cloudwatch log group | `map(string)` | `{}` | no |
 
@@ -41,4 +43,5 @@ No modules.
 |------|-------------|
 | <a name="output_cloudwatch_log_group_arn"></a> [cloudwatch\_log\_group\_arn](#output\_cloudwatch\_log\_group\_arn) | ARN of Cloudwatch log group |
 | <a name="output_cloudwatch_log_group_name"></a> [cloudwatch\_log\_group\_name](#output\_cloudwatch\_log\_group\_name) | Name of Cloudwatch log group |
+| <a name="output_cloudwatch_log_group_resource_policy_ids"></a> [cloudwatch\_log\_group\_resource\_policy\_ids](#output\_cloudwatch\_log\_group\_resource\_policy\_ids) | IDs of Cloudwatch Resource Policies |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

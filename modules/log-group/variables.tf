@@ -33,3 +33,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "resource_policies" {
+  description = "The resource policies to attach to the Cloudwatch log group mapped name to document"
+  type        = map(string)
+  default     = {}
+}

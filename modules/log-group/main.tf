@@ -8,3 +8,10 @@ resource "aws_cloudwatch_log_group" "this" {
 
   tags = var.tags
 }
+
+resource "aws_cloudwatch_log_resource_policy" "this" {
+  for_each = var.create ? var.resource_policies : {}
+
+  policy_name     = each.key
+  policy_document = each.value
+}
