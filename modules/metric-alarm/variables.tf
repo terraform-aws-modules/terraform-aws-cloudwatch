@@ -28,6 +28,13 @@ variable "evaluation_periods" {
 variable "threshold" {
   description = "The value against which the specified statistic is compared."
   type        = number
+  default     = null
+}
+
+variable "threshold_metric_id" {
+  description = "If this is an alarm based on an anomaly detection model, make this value match the ID of the ANOMALY_DETECTION_BAND function."
+  type        = string
+  default     = null
 }
 
 variable "unit" {

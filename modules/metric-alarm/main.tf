@@ -50,6 +50,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
       }
     }
   }
+  threshold_metric_id = var.threshold_metric_id
 
   tags = var.tags
 }
