@@ -8,7 +8,7 @@ output "cloudwatch_log_group_arn" {
   value       = element(concat(aws_cloudwatch_log_group.this.*.arn, [""]), 0)
 }
 
-output "cloudwatch_log_group_resource_policy_ids" {
+output "cloudwatch_log_group_resource_policies" {
   description = "IDs of Cloudwatch Resource Policies"
-  value       = { for name, policy in aws_cloudwatch_log_resource_policy.this : name => policy.id }
+  value       = { for name, policy in aws_cloudwatch_log_resource_policy.this : name => policy.policy_document }
 }

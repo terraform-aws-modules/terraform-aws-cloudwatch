@@ -24,11 +24,13 @@ No modules.
 |------|------|
 | [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
 | [aws_cloudwatch_log_resource_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_resource_policy) | resource |
+| [aws_iam_policy_document.allowed_services](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_allowed_services"></a> [allowed\_services](#input\_allowed\_services) | The names of AWS services that should be allowed to publish logs to this log-group.  Names should be the identifier for the AWS service principal minus the `.amazonaws.com`. For example, elasticsearch would be `es`.  Each service will become one of the resource policies attached and will recieve a policy name equal to the service identifier | `set(string)` | `[]` | no |
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the Cloudwatch log group | `bool` | `true` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | The ARN of the KMS Key to use when encrypting logs | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | A name for the log group | `string` | `null` | no |
@@ -43,5 +45,5 @@ No modules.
 |------|-------------|
 | <a name="output_cloudwatch_log_group_arn"></a> [cloudwatch\_log\_group\_arn](#output\_cloudwatch\_log\_group\_arn) | ARN of Cloudwatch log group |
 | <a name="output_cloudwatch_log_group_name"></a> [cloudwatch\_log\_group\_name](#output\_cloudwatch\_log\_group\_name) | Name of Cloudwatch log group |
-| <a name="output_cloudwatch_log_group_resource_policy_ids"></a> [cloudwatch\_log\_group\_resource\_policy\_ids](#output\_cloudwatch\_log\_group\_resource\_policy\_ids) | IDs of Cloudwatch Resource Policies |
+| <a name="output_cloudwatch_log_group_resource_policies"></a> [cloudwatch\_log\_group\_resource\_policies](#output\_cloudwatch\_log\_group\_resource\_policies) | IDs of Cloudwatch Resource Policies |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
