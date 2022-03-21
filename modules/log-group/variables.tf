@@ -45,3 +45,13 @@ variable "allowed_services" {
   type        = set(string)
   default     = []
 }
+
+variable "allowed_service_actions" {
+  description = "The IAM actions to allow each service to perform"
+  type        = list(string)
+  default = [
+    "logs:CreateLogStream",
+    "logs:PutLogEvents",
+    "logs:PutLogEventsBatch",
+  ]
+}

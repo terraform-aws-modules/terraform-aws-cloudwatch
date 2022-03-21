@@ -30,6 +30,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_allowed_service_actions"></a> [allowed\_service\_actions](#input\_allowed\_service\_actions) | The IAM actions to allow each service to perform | `list(string)` | <pre>[<br>  "logs:CreateLogStream",<br>  "logs:PutLogEvents",<br>  "logs:PutLogEventsBatch"<br>]</pre> | no |
 | <a name="input_allowed_services"></a> [allowed\_services](#input\_allowed\_services) | The names of AWS services that should be allowed to publish logs to this log-group.  Names should be the identifier for the AWS service principal minus the `.amazonaws.com`. For example, elasticsearch would be `es`.  Each service will become one of the resource policies attached and will recieve a policy name equal to the service identifier | `set(string)` | `[]` | no |
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the Cloudwatch log group | `bool` | `true` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | The ARN of the KMS Key to use when encrypting logs | `string` | `null` | no |
