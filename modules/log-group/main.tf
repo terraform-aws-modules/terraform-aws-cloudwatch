@@ -1,6 +1,6 @@
 locals {
   resource_policies = merge(var.resource_policies, {
-    for index, service in var.allowed_services :
+    for index, service in var.allowed_service_ids :
     service => data.aws_iam_policy_document.allowed_services[index].json
   })
 }
@@ -24,7 +24,7 @@ resource "aws_cloudwatch_log_resource_policy" "this" {
 }
 
 data "aws_iam_policy_document" "allowed_services" {
-  for_each = var.allowed_services
+  for_each = var.allowed_service_ids
 
   statement {
     principals {

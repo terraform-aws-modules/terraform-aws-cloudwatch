@@ -40,8 +40,8 @@ variable "resource_policies" {
   default     = {}
 }
 
-variable "allowed_services" {
-  description = "The names of AWS services that should be allowed to publish logs to this log-group.  Names should be the identifier for the AWS service principal minus the `.amazonaws.com`. For example, elasticsearch would be `es`.  Each service will become one of the resource policies attached and will recieve a policy name equal to the service identifier"
+variable "allowed_service_ids" {
+  description = "The IDs of AWS services that should be allowed to publish logs to this log-group.  Names should be the identifier for the AWS service principal minus the `.amazonaws.com`. For example, elasticsearch would be `es`.  Each service will become one of the resource policies attached and will recieve a policy name equal to the service identifier"
   type        = set(string)
   default     = []
 }

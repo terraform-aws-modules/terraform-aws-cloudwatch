@@ -19,7 +19,7 @@ module "advanced_example" {
   resource_policies = {
     custom = data.aws_iam_policy_document.custom.json
   }
-  allowed_services = ["es", "lambda"]
+  allowed_service_ids = ["es", "lambda"]
 }
 
 data "aws_iam_policy_document" "custom" {
