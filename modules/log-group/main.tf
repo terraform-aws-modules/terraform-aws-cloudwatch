@@ -32,8 +32,9 @@ data "aws_iam_policy_document" "allowed_services" {
       identifiers = ["${each.value}.amazonaws.com"]
     }
     actions = [
-      "logs:PutLogEvents",
       "logs:CreateLogStream",
+      "logs:PutLogEvents",
+      "logs:PutLogEventsBatch",
     ]
     resources = ["${join("", aws_cloudwatch_log_group.this.*.arn)}/*"]
   }
