@@ -9,7 +9,7 @@ Terraform module which creates Cloudwatch resources on AWS.
 ```hcl
 module "log_metric_filter" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/log-metric-filter"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   log_group_name = "my-application-logs"
 
@@ -28,10 +28,22 @@ Read [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/la
 ```hcl
 module "log_group" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/log-group"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   name              = "my-app"
   retention_in_days = 120
+}
+```
+
+### Log stream
+
+```hcl
+module "log_stream" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/log-stream"
+  version = "~> 3.0"
+
+  name           = "stream1"
+  log_group_name = "my-app"
 }
 ```
 
@@ -40,7 +52,7 @@ module "log_group" {
 ```hcl
 module "metric_alarm" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/metric-alarm"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   alarm_name          = "my-application-logs-errors"
   alarm_description   = "Bad errors in my-application-logs"
@@ -65,7 +77,7 @@ This submodule is useful when you need to create very similar alarms where only 
 ```hcl
 module "metric_alarms" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/metric-alarms-by-multiple-dimensions"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   alarm_name          = "lambda-duration-"
   alarm_description   = "Lambda duration is too high"
@@ -99,7 +111,7 @@ Check out [list of all AWS services that publish CloudWatch metrics](https://doc
 ```hcl
 module "cis_alarms" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/cis-alarms"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   log_group_name = "my-cloudtrail-logs"
   alarm_actions  = ["arn:aws:sns:eu-west-1:835367859852:my-sns-queue"]
@@ -111,6 +123,7 @@ AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module cre
 ## Examples
 
 - [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
+- [Cloudwatch log group with log stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-group-with-log-stream)
 - [Cloudwatch metric alarms for AWS Lambda](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/lambda-metric-alarm)
 - [Cloudwatch metric alarms for AWS Lambda with multiple dimensions](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-alarms-by-multiple-dimensions)
 - [CIS AWS Foundations Controls: Metrics + Alarms](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/cis-alarms)
