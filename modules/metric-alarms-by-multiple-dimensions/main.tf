@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_metric_alarm" "this" {
-  for_each = var.create_metric_alarm && length(keys(var.dimensions)) > 0 ? var.dimensions : {}
+  for_each = { for k, v in var.dimensions : k => v if var.create_metric_alarm }
 
   alarm_name        = format("%s%s", var.alarm_name, each.key)
   alarm_description = var.alarm_description
