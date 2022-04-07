@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.5.0...v3.0.0) (2022-04-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* Added log-stream module, updated versions to 0.13+ (#38)
+
+### Features
+
+* Added log-stream module, updated versions to 0.13+ ([#38](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/38)) ([b426858](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/b42685899793c3ae1733844f07c610e9aa663250))
+
 ## [2.5.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.4.1...v2.5.0) (2022-03-18)
 
 
