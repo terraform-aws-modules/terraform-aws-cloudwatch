@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.0.0...v3.1.0) (2022-04-12)
+
+
+### Features
+
+* Added wrappers for all modules ([#40](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/40)) ([943debc](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/943debcf60f07bd3ead912aaafe19ddca9451405))
+
 ## [3.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v2.5.0...v3.0.0) (2022-04-07)
 
 
