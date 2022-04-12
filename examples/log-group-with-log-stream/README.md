@@ -31,7 +31,9 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_log_group"></a> [log\_group](#module\_log\_group) | ../../modules/log-group | n/a |
+| <a name="module_log_group_wrapped"></a> [log\_group\_wrapped](#module\_log\_group\_wrapped) | ../../wrappers/log-group | n/a |
 | <a name="module_log_stream"></a> [log\_stream](#module\_log\_stream) | ../../modules/log-stream | n/a |
+| <a name="module_log_stream_wrapped"></a> [log\_stream\_wrapped](#module\_log\_stream\_wrapped) | ../../wrappers/log-stream | n/a |
 
 ## Resources
 
