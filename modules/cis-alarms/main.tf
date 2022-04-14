@@ -79,7 +79,7 @@ locals {
   ###############
 
   prefix   = var.use_random_name_prefix ? "${random_pet.this[0].id}-" : var.name_prefix
-  controls = { for k, v in local.all_controls : k => merge(v, lookup(var.control_overrides, k, {})) if var.create && !contains(var.disabled_controls, k) }
+  controls = { for k, v in local.all_controls : k => merge(v, try(var.control_overrides[k], {})) if var.create && !contains(var.disabled_controls, k) }
 }
 
 resource "random_pet" "this" {
