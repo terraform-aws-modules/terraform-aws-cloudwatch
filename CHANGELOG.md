@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.1.0...v3.2.0) (2022-04-14)
+
+
+### Features
+
+* Allow overriding items for each control in `cis-alarms` module ([#41](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/41)) ([f04d5d1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/f04d5d1019a724e4a415768113858e7ad9d8422e))
+
 ## [3.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.0.0...v3.1.0) (2022-04-12)
 
 
