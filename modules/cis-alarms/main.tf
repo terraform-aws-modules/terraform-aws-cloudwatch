@@ -79,7 +79,7 @@ locals {
   ###############
 
   prefix   = var.use_random_name_prefix ? "${random_pet.this[0].id}-" : var.name_prefix
-  controls = { for k, v in local.all_controls : k => v if !contains(var.disabled_controls, k) }
+  controls = { for k, v in local.all_controls : k => merge(v, lookup(var.control_overrides, k, {})) if var.create && !contains(var.disabled_controls, k) }
 }
 
 resource "random_pet" "this" {
@@ -89,7 +89,7 @@ resource "random_pet" "this" {
 }
 
 resource "aws_cloudwatch_log_metric_filter" "this" {
-  for_each = var.create ? local.controls : {}
+  for_each = local.controls
 
   name           = "${local.prefix}${each.key}"
   pattern        = each.value["pattern"]
@@ -104,7 +104,7 @@ resource "aws_cloudwatch_log_metric_filter" "this" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "this" {
-  for_each = var.create ? local.controls : {}
+  for_each = local.controls
 
   metric_name       = aws_cloudwatch_log_metric_filter.this[each.key].id
   namespace         = lookup(each.value, "namespace", var.namespace)
