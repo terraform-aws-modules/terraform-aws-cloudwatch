@@ -16,6 +16,12 @@ variable "name_prefix" {
   default     = ""
 }
 
+variable "control_overrides" {
+  description = "A map of overrides to apply to each control"
+  default     = {}
+  type        = any
+}
+
 variable "disabled_controls" {
   description = "List of IDs of disabled CIS controls"
   type        = list(string)

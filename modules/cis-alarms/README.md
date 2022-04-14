@@ -36,6 +36,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_actions_enabled"></a> [actions\_enabled](#input\_actions\_enabled) | Indicates whether or not actions should be executed during any changes to the alarm's state. | `bool` | `true` | no |
 | <a name="input_alarm_actions"></a> [alarm\_actions](#input\_alarm\_actions) | List of ARNs to put as Cloudwatch Alarms actions (eg, ARN of SNS topic) | `list(string)` | `[]` | no |
+| <a name="input_control_overrides"></a> [control\_overrides](#input\_control\_overrides) | A map of overrides to apply to each control | `any` | `{}` | no |
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the Cloudwatch log metric filter and metric alarms | `bool` | `true` | no |
 | <a name="input_disabled_controls"></a> [disabled\_controls](#input\_disabled\_controls) | List of IDs of disabled CIS controls | `list(string)` | `[]` | no |
 | <a name="input_log_group_name"></a> [log\_group\_name](#input\_log\_group\_name) | The name of the log group to associate the metric filter with | `string` | `""` | no |
