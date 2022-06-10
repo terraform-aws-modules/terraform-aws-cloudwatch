@@ -51,3 +51,12 @@ module "control_overrides" {
     }
   }
 }
+
+module "all_action_types" {
+  source = "../../modules/cis-alarms"
+
+  log_group_name            = module.log.cloudwatch_log_group_name
+  alarm_actions             = [module.aws_sns_topic.sns_topic_arn]
+  ok_actions                = [module.aws_sns_topic.sns_topic_arn]
+  insufficient_data_actions = [module.aws_sns_topic.sns_topic_arn]
+}
