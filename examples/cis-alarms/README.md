@@ -30,6 +30,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_all_action_types"></a> [all\_action\_types](#module\_all\_action\_types) | ../../modules/cis-alarms | n/a |
 | <a name="module_all_cis_alarms"></a> [all\_cis\_alarms](#module\_all\_cis\_alarms) | ../../modules/cis-alarms | n/a |
 | <a name="module_aws_sns_topic"></a> [aws\_sns\_topic](#module\_aws\_sns\_topic) | ../fixtures/aws_sns_topic | n/a |
 | <a name="module_control_overrides"></a> [control\_overrides](#module\_control\_overrides) | ../../modules/cis-alarms | n/a |

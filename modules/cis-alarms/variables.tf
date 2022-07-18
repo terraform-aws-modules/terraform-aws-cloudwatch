@@ -57,3 +57,15 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "ok_actions" {
+  description = "List of ARNs to put as Cloudwatch OK actions (eg, ARN of SNS topic)"
+  type        = list(string)
+  default     = []
+}
+
+variable "insufficient_data_actions" {
+  description = "List of ARNs to put as Cloudwatch insuficient data actions (eg, ARN of SNS topic)"
+  type        = list(string)
+  default     = []
+}

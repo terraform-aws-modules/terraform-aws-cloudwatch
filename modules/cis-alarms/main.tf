@@ -113,8 +113,8 @@ resource "aws_cloudwatch_metric_alarm" "this" {
 
   actions_enabled           = lookup(each.value, "actions_enabled", var.actions_enabled)
   alarm_actions             = lookup(each.value, "alarm_actions", var.alarm_actions)
-  ok_actions                = lookup(each.value, "ok_actions", null)
-  insufficient_data_actions = lookup(each.value, "insufficient_data_actions", null)
+  ok_actions                = lookup(each.value, "ok_actions", var.ok_actions)
+  insufficient_data_actions = lookup(each.value, "insufficient_data_actions", var.insufficient_data_actions)
 
   comparison_operator                   = lookup(each.value, "comparison_operator", "GreaterThanOrEqualToThreshold")
   evaluation_periods                    = lookup(each.value, "evaluation_periods", 1)
