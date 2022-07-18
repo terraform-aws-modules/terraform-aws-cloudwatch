@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.2.0...v3.3.0) (2022-07-18)
+
+
+### Features
+
+* Add option to specify default ok no data actions ([#44](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/44)) ([fdb39b7](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/fdb39b74f0edb67c8a987ef1ed049ef99cf1f2f2))
+
 ## [3.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.1.0...v3.2.0) (2022-04-14)
 
 
