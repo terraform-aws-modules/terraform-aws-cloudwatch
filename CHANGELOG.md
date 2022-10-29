@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.3.0...v4.0.0) (2022-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update supported Terraform min version to v1.0+ and AWS provider to v4.0+ (#47)
+
+### Features
+
+* Update supported Terraform min version to v1.0+ and AWS provider to v4.0+ ([#47](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/47)) ([4fa9065](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/4fa90657173940df5c84915ba54c458386210b32))
+
 ## [3.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.2.0...v3.3.0) (2022-07-18)
 
 
