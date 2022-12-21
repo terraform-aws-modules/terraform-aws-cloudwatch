@@ -10,5 +10,6 @@ resource "aws_cloudwatch_log_metric_filter" "this" {
     namespace     = var.metric_transformation_namespace
     value         = var.metric_transformation_value
     default_value = var.metric_transformation_default_value
+    unit          = var.metric_transformation_unit
   }
 }
