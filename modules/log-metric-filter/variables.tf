@@ -45,5 +45,5 @@ variable "metric_transformation_default_value" {
 variable "metric_transformation_unit" {
   description = "The unit to assign to the metric. If you omit this, the unit is set as None."
   type        = string
-  default     = "None"
+  default     = null
 }
