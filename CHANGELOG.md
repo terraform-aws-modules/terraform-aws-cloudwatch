@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.0.0...v4.1.0) (2023-01-03)
+
+
+### Features
+
+* Updated UnauthorizedAPICalls pattern to pass CIS v1.2.0 ([#48](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/48)) ([6901778](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/6901778222b8eeff38599582925a0dc291291c16))
+
 ## [4.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v3.3.0...v4.0.0) (2022-10-29)
 
 
