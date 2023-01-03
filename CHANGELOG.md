@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.1.0...v4.2.0) (2023-01-03)
+
+
+### Features
+
+* Add option to specify metric transformation unit ([#49](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/49)) ([5116f50](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/5116f5045b0a5011e117ed8a7f42b5d63e0f9286))
+
 ## [4.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.0.0...v4.1.0) (2023-01-03)
 
 
