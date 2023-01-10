@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [4.2.1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.2.0...v4.2.1) (2023-01-10)
+
+
+### Bug Fixes
+
+* Make unauthorized pattern match exact ([#50](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/50)) ([03d43d5](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/03d43d5de5c5266efbd5764901af0c928e112323))
+
 ## [4.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.1.0...v4.2.0) (2023-01-03)
 
 
