@@ -60,5 +60,5 @@ resource "aws_lambda_function" "this" {
   role             = aws_iam_role.lambda.arn
   handler          = "index.lambda_handler"
   source_code_hash = data.archive_file.lambda.output_base64sha256
-  runtime          = "python3.6"
+  runtime          = "python3.9"
 }

@@ -35,6 +35,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
       label       = lookup(metric_query.value, "label", null)
       return_data = lookup(metric_query.value, "return_data", null)
       expression  = lookup(metric_query.value, "expression", null)
+      period      = lookup(metric_query.value, "period", null)
 
       dynamic "metric" {
         for_each = lookup(metric_query.value, "metric", [])
