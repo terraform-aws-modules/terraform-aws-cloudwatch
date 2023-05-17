@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.2.1...v4.3.0) (2023-05-17)
+
+
+### Features
+
+* Add support for `period` in `metric_query_block` ([#53](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/53)) ([8dd8161](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/8dd8161dd04dd218c33c469766730293ea87a811))
+
 ### [4.2.1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.2.0...v4.2.1) (2023-01-10)
 
 
