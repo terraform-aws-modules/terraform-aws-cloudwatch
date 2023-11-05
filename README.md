@@ -125,7 +125,7 @@ module "log_group_data_protection" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/log-data-protection-policy"
   version = "~> 4.0"
 
-  log_group_name = "my-log-group"
+  log_group_name  = "my-log-group"
   policy_document = jsonencode({
     Name    = "Example"
     Version = "2021-06-01"
