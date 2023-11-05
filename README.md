@@ -118,6 +118,46 @@ module "cis_alarms" {
 }
 ```
 
+### Log Group Data Protection Policy
+
+```hcl
+module "log_group_data_protection" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/log-data-protection-policy"
+  version = "~> 4.0"
+
+  log_group_name = "my-log-group"
+  policy_document = jsonencode({
+    Name    = "Example"
+    Version = "2021-06-01"
+
+    Statement = [
+      {
+        Sid            = "Audit"
+        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/Address"]
+        Operation = {
+          Audit = {
+            FindingsDestination = {
+              CloudWatchLogs = {
+                LogGroup = module.audit_destination_group.cloudwatch_log_group_name
+              }
+            }
+          }
+        }
+      },
+      {
+        Sid            = "Redact"
+        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/Address"]
+        Operation = {
+          Deidentify = {
+            MaskConfig = {}
+          }
+        }
+      }
+    ]
+  })
+}
+```
+
 AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
 ## Examples
