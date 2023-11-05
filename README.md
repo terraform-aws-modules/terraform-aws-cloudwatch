@@ -118,6 +118,50 @@ module "cis_alarms" {
 }
 ```
 
+### Metric Stream 
+
+```hcl
+module "metric_stream" {
+  name          = "metric-stream"
+  firehose_arn  = aws_kinesis_firehose_delivery_stream.metric_stream.arn
+  output_format = "json"
+  role_arn      = module.stream_to_firehose_role.iam_role_arn
+
+  # conflicts with exclude_filter
+  include_filter = {
+    ec2 = {
+      namespace    = "AWS/EC2"
+      metric_names = ["CPUUtilization", "NetworkIn"]
+    }
+  }
+
+  statistics_configuration = [
+    {
+      additional_statistics = ["p99"]
+      include_metric = [
+        {
+          namespace   = "AWS/EC2"
+          metric_name = "CPUUtilization"
+        },
+        {
+          namespace   = "AWS/EC2"
+          metric_name = "NetworkIn"
+        }
+      ]
+    },
+    {
+      additional_statistics = ["p90", "TM(10%:90%)"]
+      include_metric = [
+        {
+          namespace   = "AWS/EC2"
+          metric_name = "CPUUtilization"
+        }
+      ]
+    }
+  ]
+}
+```
+
 AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
 ## Examples
