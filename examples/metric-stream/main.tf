@@ -6,10 +6,10 @@ locals {
   name = "metric-stream"
 }
 
-module "exclude_stream" {
+module "stream_with_exclude_filter" {
   source = "../../modules/metric-stream"
 
-  name          = "${local.name}-exclude"
+  name          = "${local.name}-with-exclude-filter"
   firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_exclude_stream.arn
   output_format = "json"
   role_arn      = module.stream_to_firehose_role.iam_role_arn
@@ -26,10 +26,10 @@ module "exclude_stream" {
   }
 }
 
-module "include_stream" {
+module "stream_with_include_filter" {
   source = "../../modules/metric-stream"
 
-  name          = "${local.name}-include"
+  name          = "${local.name}-with-include-filter"
   firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_include_stream.arn
   output_format = "json"
   role_arn      = module.stream_to_firehose_role.iam_role_arn
@@ -81,25 +81,25 @@ resource "random_pet" "this" {
   length = 2
 }
 
-module "include_bucket" {
+module "stream_include_filter_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 3.15"
 
-  bucket = "${local.name}-include-${random_pet.this.id}"
+  bucket = "${local.name}-include-filter-${random_pet.this.id}"
 
   force_destroy = true
 }
 
-module "exclude_bucket" {
+module "stream_exclude_filter_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 3.15"
 
-  bucket = "${local.name}-exclude-${random_pet.this.id}"
+  bucket = "${local.name}-exclude-filter-${random_pet.this.id}"
 
   force_destroy = true
 }
 
-module "all_bucket" {
+module "stream_all_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 3.15"
 
@@ -109,22 +109,22 @@ module "all_bucket" {
 }
 
 resource "aws_kinesis_firehose_delivery_stream" "s3_include_stream" {
-  name        = "${local.name}-include-example"
+  name        = "${local.name}-include-filter-example"
   destination = "extended_s3"
 
   extended_s3_configuration {
     role_arn   = module.firehose_to_s3.iam_role_arn
-    bucket_arn = module.include_bucket.s3_bucket_arn
+    bucket_arn = module.stream_include_filter_bucket.s3_bucket_arn
   }
 }
 
 resource "aws_kinesis_firehose_delivery_stream" "s3_exclude_stream" {
-  name        = "${local.name}-exclude-example"
+  name        = "${local.name}-exclude-filter-example"
   destination = "extended_s3"
 
   extended_s3_configuration {
     role_arn   = module.firehose_to_s3.iam_role_arn
-    bucket_arn = module.exclude_bucket.s3_bucket_arn
+    bucket_arn = module.stream_exclude_filter_bucket.s3_bucket_arn
   }
 }
 
@@ -134,7 +134,7 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_all_stream" {
 
   extended_s3_configuration {
     role_arn   = module.firehose_to_s3.iam_role_arn
-    bucket_arn = module.all_bucket.s3_bucket_arn
+    bucket_arn = module.stream_all_bucket.s3_bucket_arn
   }
 }
 
@@ -181,12 +181,12 @@ data "aws_iam_policy_document" "firehose_to_s3" {
     ]
 
     resources = [
-      module.include_bucket.s3_bucket_arn,
-      "${module.include_bucket.s3_bucket_arn}/*",
-      module.exclude_bucket.s3_bucket_arn,
-      "${module.exclude_bucket.s3_bucket_arn}/*",
-      module.all_bucket.s3_bucket_arn,
-      "${module.all_bucket.s3_bucket_arn}/*",
+      module.stream_include_filter_bucket.s3_bucket_arn,
+      "${module.stream_include_filter_bucket.s3_bucket_arn}/*",
+      module.stream_exclude_filter_bucket.s3_bucket_arn,
+      "${module.stream_exclude_filter_bucket.s3_bucket_arn}/*",
+      module.stream_all_bucket.s3_bucket_arn,
+      "${module.stream_all_bucket.s3_bucket_arn}/*",
     ]
   }
 }
