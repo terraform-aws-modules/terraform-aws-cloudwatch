@@ -10,5 +10,5 @@ output "cloudwatch_log_group_arn" {
 
 output "cloudwatch_query_definition_id" {
   description = "The query definition id"
-  value       = module.query_definition.query_definition_id
+  value       = module.query_definition.cloudwatch_query_definition_id
 }

@@ -37,5 +37,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_query_definition_id"></a> [query\_definition\_id](#output\_query\_definition\_id) | The query definition id. |
+| <a name="output_cloudwatch_query_definition_id"></a> [cloudwatch\_query\_definition\_id](#output\_cloudwatch\_query\_definition\_id) | The query definition id. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
