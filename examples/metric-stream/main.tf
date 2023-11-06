@@ -23,6 +23,10 @@ module "stream_with_exclude_filter" {
       namespace    = "AWS/Usage"
       metric_names = ["CallCount", "ResourceCount"]
     }
+    kms = {
+      namespace    = "AWS/Firehose"
+      metric_names = ["KMSKeyDisabled"]
+    }
   }
 }
 
@@ -81,29 +85,11 @@ resource "random_pet" "this" {
   length = 2
 }
 
-module "stream_include_filter_bucket" {
+module "metrics_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 3.15"
 
-  bucket = "${local.name}-include-filter-${random_pet.this.id}"
-
-  force_destroy = true
-}
-
-module "stream_exclude_filter_bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "~> 3.15"
-
-  bucket = "${local.name}-exclude-filter-${random_pet.this.id}"
-
-  force_destroy = true
-}
-
-module "stream_all_bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "~> 3.15"
-
-  bucket = "${local.name}-all-${random_pet.this.id}"
+  bucket = "${local.name}-${random_pet.this.id}"
 
   force_destroy = true
 }
@@ -114,7 +100,8 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_include_stream" {
 
   extended_s3_configuration {
     role_arn   = module.firehose_to_s3.iam_role_arn
-    bucket_arn = module.stream_include_filter_bucket.s3_bucket_arn
+    bucket_arn = module.metrics_bucket.s3_bucket_arn
+    prefix     = "include-filter/"
   }
 }
 
@@ -124,7 +111,8 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_exclude_stream" {
 
   extended_s3_configuration {
     role_arn   = module.firehose_to_s3.iam_role_arn
-    bucket_arn = module.stream_exclude_filter_bucket.s3_bucket_arn
+    bucket_arn = module.metrics_bucket.s3_bucket_arn
+    prefix     = "exclude-filter/"
   }
 }
 
@@ -134,7 +122,8 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_all_stream" {
 
   extended_s3_configuration {
     role_arn   = module.firehose_to_s3.iam_role_arn
-    bucket_arn = module.stream_all_bucket.s3_bucket_arn
+    bucket_arn = module.metrics_bucket.s3_bucket_arn
+    prefix     = "all/"
   }
 }
 
@@ -181,12 +170,8 @@ data "aws_iam_policy_document" "firehose_to_s3" {
     ]
 
     resources = [
-      module.stream_include_filter_bucket.s3_bucket_arn,
-      "${module.stream_include_filter_bucket.s3_bucket_arn}/*",
-      module.stream_exclude_filter_bucket.s3_bucket_arn,
-      "${module.stream_exclude_filter_bucket.s3_bucket_arn}/*",
-      module.stream_all_bucket.s3_bucket_arn,
-      "${module.stream_all_bucket.s3_bucket_arn}/*",
+      module.metrics_bucket.s3_bucket_arn,
+      "${module.metrics_bucket.s3_bucket_arn}/*",
     ]
   }
 }
