@@ -33,6 +33,12 @@ variable "kms_key_id" {
   default     = null
 }
 
+variable "log_group_class" {
+  description = "Specified the log class of the log group. Possible values are: STANDARD or INFREQUENT_ACCESS"
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   description = "A map of tags to add to Cloudwatch log group"
   type        = map(string)
