@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.4.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.3.0...v4.4.0) (2023-12-11)
+
+
+### Features
+
+* Allow setting dimensions on CloudWatch Metric Filters ([#57](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/57)) ([72084b3](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/72084b35c7b6bbc2be12bdb2b2fe5a48a294c087))
+
 ## [4.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.2.1...v4.3.0) (2023-05-17)
 
 
