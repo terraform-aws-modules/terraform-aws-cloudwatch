@@ -36,7 +36,7 @@ variable "kms_key_id" {
 variable "skip_destroy" {
   description = "Set to true if you do not wish the log group (and any logs it may contain) to be deleted at destroy time, and instead just remove the log group from the Terraform state"
   type        = bool
-  default     = false
+  default     = null
 }
 
 variable "tags" {
