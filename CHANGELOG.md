@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.5.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.4.0...v4.5.0) (2023-12-12)
+
+
+### Features
+
+* Support `aws_cloudwatch_query_definition` and add `skip_destroy` argument to `aws_cloudwatch_log_group` ([#60](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/60)) ([5cc5efb](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/5cc5efbb954aa0f1654fe7c9784b5256f44bbe04))
+
 ## [4.4.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.3.0...v4.4.0) (2023-12-11)
 
 
