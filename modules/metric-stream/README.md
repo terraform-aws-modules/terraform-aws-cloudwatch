@@ -34,7 +34,7 @@ No modules.
 | <a name="input_include_filter"></a> [include\_filter](#input\_include\_filter) | Map of inclusive metric filters. If you specify this parameter, the stream sends only the conditional metric names from the metric namespaces that you specify here. If you don't specify metric names or provide empty metric names whole metric namespace is included. Conflicts with exclude\_filter. | `any` | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | Friendly name of the metric stream. If omitted, Terraform will assign a random, unique name. Conflicts with name\_prefix. | `string` | `null` | no |
 | <a name="input_name_prefix"></a> [name\_prefix](#input\_name\_prefix) | Creates a unique friendly name beginning with the specified prefix. Conflicts with name. | `string` | `null` | no |
-| <a name="input_output_format"></a> [output\_format](#input\_output\_format) | Output format for the stream. Possible values are json and opentelemetry0.7. | `string` | n/a | yes |
+| <a name="input_output_format"></a> [output\_format](#input\_output\_format) | Output format for the stream. Possible values are json, opentelemetry0.7, and opentelemetry1.0 | `string` | n/a | yes |
 | <a name="input_role_arn"></a> [role\_arn](#input\_role\_arn) | ARN of the IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. | `string` | n/a | yes |
 | <a name="input_statistics_configuration"></a> [statistics\_configuration](#input\_statistics\_configuration) | Map of statistics configuration. | `any` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to the Cloudwatch Metric Stream. | `map(string)` | `{}` | no |

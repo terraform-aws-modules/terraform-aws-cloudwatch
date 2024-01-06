@@ -27,7 +27,7 @@ variable "role_arn" {
 }
 
 variable "output_format" {
-  description = " Output format for the stream. Possible values are json and opentelemetry0.7."
+  description = " Output format for the stream. Possible values are json, opentelemetry0.7, and opentelemetry1.0"
   type        = string
 }
 
