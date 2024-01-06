@@ -164,6 +164,22 @@ module "metric_stream" {
 
 AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
+### Query Definition
+
+```hcl
+module "query_definition" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/query-definition"
+  version = "~> 4.0"
+  
+  name = "my-query-definition"
+  log_group_names = ["my-log-group-name"]
+  query_string = <<EOF
+fields @timestamp, @message
+| sort @timestamp desc
+| limit 25
+EOF
+}
+```
 ## Examples
 
 - [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
@@ -171,6 +187,7 @@ AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module cre
 - [Cloudwatch metric alarms for AWS Lambda](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/lambda-metric-alarm)
 - [Cloudwatch metric alarms for AWS Lambda with multiple dimensions](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/multiple-lambda-metric-alarm)
 - [CIS AWS Foundations Controls: Metrics + Alarms](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/cis-alarms)
+- [Cloudwatch query definition](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/query-definition)
 - [Cloudwatch Metric Stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-stream)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

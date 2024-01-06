@@ -28,6 +28,7 @@ module "log_group_wrapped" {
     "two" = {
       name_prefix       = "my-log-group-wrapper2-"
       retention_in_days = 14
+      log_group_class   = "INFREQUENT_ACCESS"
     }
   }
 

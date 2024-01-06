@@ -11,5 +11,6 @@ resource "aws_cloudwatch_log_metric_filter" "this" {
     value         = var.metric_transformation_value
     default_value = var.metric_transformation_default_value
     unit          = var.metric_transformation_unit
+    dimensions    = var.metric_transformation_dimensions
   }
 }
