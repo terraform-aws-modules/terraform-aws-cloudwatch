@@ -81,13 +81,24 @@ module "stream_all" {
   role_arn      = module.stream_to_firehose_role.iam_role_arn
 }
 
+module "stream_all_disabled" {
+  source = "../../modules/metric-stream"
+
+  create = false
+
+  name          = "${local.name}-all-disabled"
+  firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_all_stream.arn
+  output_format = "json"
+  role_arn      = module.stream_to_firehose_role.iam_role_arn
+}
+
 resource "random_pet" "this" {
   length = 2
 }
 
 module "metrics_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "~> 3.15"
+  version = ">= 3.15"
 
   bucket = "${local.name}-${random_pet.this.id}"
 
@@ -129,7 +140,7 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_all_stream" {
 
 module "firehose_to_s3" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "~> 5.30"
+  version = ">= 5.30"
 
   trusted_role_services = [
     "firehose.amazonaws.com"
@@ -147,7 +158,7 @@ module "firehose_to_s3" {
 
 module "firehose_to_s3_policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = "~> 5.30"
+  version = ">= 5.30"
 
   name        = "${local.name}-firehose-to-s3"
   path        = "/"
@@ -178,7 +189,7 @@ data "aws_iam_policy_document" "firehose_to_s3" {
 
 module "stream_to_firehose_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "~> 5.30"
+  version = ">= 5.30"
 
   trusted_role_services = [
     "streams.metrics.cloudwatch.amazonaws.com"
@@ -196,7 +207,7 @@ module "stream_to_firehose_role" {
 
 module "stream_to_firehose_policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = "~> 5.30"
+  version = ">= 5.30"
 
   name        = "${local.name}-to-firehose"
   path        = "/"

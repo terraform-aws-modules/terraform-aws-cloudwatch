@@ -118,14 +118,16 @@ module "cis_alarms" {
 }
 ```
 
+AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
+
 ### Metric Stream 
 
 ```hcl
 module "metric_stream" {
   name          = "metric-stream"
-  firehose_arn  = aws_kinesis_firehose_delivery_stream.metric_stream.arn
+  firehose_arn  = "arn:aws:firehose:eu-west-1:835367859852:deliverystream/metric-stream-example"
   output_format = "json"
-  role_arn      = module.stream_to_firehose_role.iam_role_arn
+  role_arn      = "arn:aws:iam::835367859852:role/metric-stream-to-firehose-20240113005123755300000002"
 
   # conflicts with exclude_filter
   include_filter = {
@@ -161,8 +163,6 @@ module "metric_stream" {
   ]
 }
 ```
-
-AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
 ### Query Definition
 

@@ -34,12 +34,13 @@ Note that this example may create resources which cost money. Run `terraform des
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_firehose_to_s3"></a> [firehose\_to\_s3](#module\_firehose\_to\_s3) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | ~> 5.30 |
-| <a name="module_firehose_to_s3_policy"></a> [firehose\_to\_s3\_policy](#module\_firehose\_to\_s3\_policy) | terraform-aws-modules/iam/aws//modules/iam-policy | ~> 5.30 |
-| <a name="module_metrics_bucket"></a> [metrics\_bucket](#module\_metrics\_bucket) | terraform-aws-modules/s3-bucket/aws | ~> 3.15 |
+| <a name="module_firehose_to_s3"></a> [firehose\_to\_s3](#module\_firehose\_to\_s3) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | >= 5.30 |
+| <a name="module_firehose_to_s3_policy"></a> [firehose\_to\_s3\_policy](#module\_firehose\_to\_s3\_policy) | terraform-aws-modules/iam/aws//modules/iam-policy | >= 5.30 |
+| <a name="module_metrics_bucket"></a> [metrics\_bucket](#module\_metrics\_bucket) | terraform-aws-modules/s3-bucket/aws | >= 3.15 |
 | <a name="module_stream_all"></a> [stream\_all](#module\_stream\_all) | ../../modules/metric-stream | n/a |
-| <a name="module_stream_to_firehose_policy"></a> [stream\_to\_firehose\_policy](#module\_stream\_to\_firehose\_policy) | terraform-aws-modules/iam/aws//modules/iam-policy | ~> 5.30 |
-| <a name="module_stream_to_firehose_role"></a> [stream\_to\_firehose\_role](#module\_stream\_to\_firehose\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | ~> 5.30 |
+| <a name="module_stream_all_disabled"></a> [stream\_all\_disabled](#module\_stream\_all\_disabled) | ../../modules/metric-stream | n/a |
+| <a name="module_stream_to_firehose_policy"></a> [stream\_to\_firehose\_policy](#module\_stream\_to\_firehose\_policy) | terraform-aws-modules/iam/aws//modules/iam-policy | >= 5.30 |
+| <a name="module_stream_to_firehose_role"></a> [stream\_to\_firehose\_role](#module\_stream\_to\_firehose\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role | >= 5.30 |
 | <a name="module_stream_with_exclude_filter"></a> [stream\_with\_exclude\_filter](#module\_stream\_with\_exclude\_filter) | ../../modules/metric-stream | n/a |
 | <a name="module_stream_with_include_filter"></a> [stream\_with\_include\_filter](#module\_stream\_with\_include\_filter) | ../../modules/metric-stream | n/a |
 
