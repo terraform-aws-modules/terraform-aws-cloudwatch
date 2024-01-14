@@ -118,6 +118,8 @@ module "cis_alarms" {
 }
 ```
 
+AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
+
 ### Log Group Data Protection Policy
 
 ```hcl
@@ -158,8 +160,66 @@ module "log_group_data_protection" {
 }
 ```
 
-AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
+### Metric Stream 
 
+```hcl
+module "metric_stream" {
+  name          = "metric-stream"
+  firehose_arn  = "arn:aws:firehose:eu-west-1:835367859852:deliverystream/metric-stream-example"
+  output_format = "json"
+  role_arn      = "arn:aws:iam::835367859852:role/metric-stream-to-firehose-20240113005123755300000002"
+
+  # conflicts with exclude_filter
+  include_filter = {
+    ec2 = {
+      namespace    = "AWS/EC2"
+      metric_names = ["CPUUtilization", "NetworkIn"]
+    }
+  }
+
+  statistics_configuration = [
+    {
+      additional_statistics = ["p99"]
+      include_metric = [
+        {
+          namespace   = "AWS/EC2"
+          metric_name = "CPUUtilization"
+        },
+        {
+          namespace   = "AWS/EC2"
+          metric_name = "NetworkIn"
+        }
+      ]
+    },
+    {
+      additional_statistics = ["p90", "TM(10%:90%)"]
+      include_metric = [
+        {
+          namespace   = "AWS/EC2"
+          metric_name = "CPUUtilization"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Query Definition
+
+```hcl
+module "query_definition" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/query-definition"
+  version = "~> 4.0"
+  
+  name = "my-query-definition"
+  log_group_names = ["my-log-group-name"]
+  query_string = <<EOF
+fields @timestamp, @message
+| sort @timestamp desc
+| limit 25
+EOF
+}
+```
 ## Examples
 
 - [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
@@ -167,6 +227,8 @@ AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module cre
 - [Cloudwatch metric alarms for AWS Lambda](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/lambda-metric-alarm)
 - [Cloudwatch metric alarms for AWS Lambda with multiple dimensions](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/multiple-lambda-metric-alarm)
 - [CIS AWS Foundations Controls: Metrics + Alarms](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/cis-alarms)
+- [Cloudwatch query definition](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/query-definition)
+- [Cloudwatch Metric Stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-stream)
 - [Cloudwatch log data protection policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-group-with-data-protection-policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

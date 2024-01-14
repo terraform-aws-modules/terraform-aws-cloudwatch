@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.0.0...v5.1.0) (2024-01-14)
+
+
+### Features
+
+* Added support for Cloudwatch metric stream ([#64](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/64)) ([0aeaf26](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/0aeaf26eca07a825473a99f59d4a76c33fbc81f9))
+
+## [5.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.5.0...v5.0.0) (2023-12-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add `log_group_class` to log group, bump AWS provider version to 5.x (#63)
+
+### Features
+
+* Add `log_group_class` to log group, bump AWS provider version to 5.x ([#63](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/63)) ([d0f3343](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/d0f3343d631e57e4708c2ebbe7d558fcfdfde57a))
+
+## [4.5.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.4.0...v4.5.0) (2023-12-12)
+
+
+### Features
+
+* Support `aws_cloudwatch_query_definition` and add `skip_destroy` argument to `aws_cloudwatch_log_group` ([#60](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/60)) ([5cc5efb](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/5cc5efbb954aa0f1654fe7c9784b5256f44bbe04))
+
+## [4.4.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.3.0...v4.4.0) (2023-12-11)
+
+
+### Features
+
+* Allow setting dimensions on CloudWatch Metric Filters ([#57](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/57)) ([72084b3](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/72084b35c7b6bbc2be12bdb2b2fe5a48a294c087))
+
 ## [4.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.2.1...v4.3.0) (2023-05-17)
 
 

@@ -37,7 +37,7 @@ variable "metric_transformation_value" {
 }
 
 variable "metric_transformation_default_value" {
-  description = "The value to emit when a filter pattern does not match a log event."
+  description = "The value to emit when a filter pattern does not match a log event. Conflicts with `metric_transformation_dimensions`."
   type        = string
   default     = null
 }
@@ -46,4 +46,10 @@ variable "metric_transformation_unit" {
   description = "The unit to assign to the metric. If you omit this, the unit is set as None."
   type        = string
   default     = null
+}
+
+variable "metric_transformation_dimensions" {
+  description = "The additional dimensions to assign to the metric, in the form `\"name\" = \"$.value\". Conflicts with `metric_transformation_default_value`."
+  type        = map(string)
+  default     = {}
 }
