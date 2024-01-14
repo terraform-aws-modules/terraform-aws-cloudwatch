@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.0.0...v5.1.0) (2024-01-14)
+
+
+### Features
+
+* Added support for Cloudwatch metric stream ([#64](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/64)) ([0aeaf26](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/0aeaf26eca07a825473a99f59d4a76c33fbc81f9))
+
 ## [5.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v4.5.0...v5.0.0) (2023-12-16)
 
 
