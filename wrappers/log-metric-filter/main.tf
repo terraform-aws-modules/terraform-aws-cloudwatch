@@ -12,4 +12,5 @@ module "wrapper" {
   metric_transformation_value         = try(each.value.metric_transformation_value, var.defaults.metric_transformation_value, "1")
   metric_transformation_default_value = try(each.value.metric_transformation_default_value, var.defaults.metric_transformation_default_value, null)
   metric_transformation_unit          = try(each.value.metric_transformation_unit, var.defaults.metric_transformation_unit, null)
+  metric_transformation_dimensions    = try(each.value.metric_transformation_dimensions, var.defaults.metric_transformation_dimensions, {})
 }

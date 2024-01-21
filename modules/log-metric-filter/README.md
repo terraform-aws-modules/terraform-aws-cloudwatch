@@ -6,13 +6,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0 |
 
 ## Modules
 
@@ -30,7 +30,8 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_create_cloudwatch_log_metric_filter"></a> [create\_cloudwatch\_log\_metric\_filter](#input\_create\_cloudwatch\_log\_metric\_filter) | Whether to create the Cloudwatch log metric filter | `bool` | `true` | no |
 | <a name="input_log_group_name"></a> [log\_group\_name](#input\_log\_group\_name) | The name of the log group to associate the metric filter with | `string` | n/a | yes |
-| <a name="input_metric_transformation_default_value"></a> [metric\_transformation\_default\_value](#input\_metric\_transformation\_default\_value) | The value to emit when a filter pattern does not match a log event. | `string` | `null` | no |
+| <a name="input_metric_transformation_default_value"></a> [metric\_transformation\_default\_value](#input\_metric\_transformation\_default\_value) | The value to emit when a filter pattern does not match a log event. Conflicts with `metric_transformation_dimensions`. | `string` | `null` | no |
+| <a name="input_metric_transformation_dimensions"></a> [metric\_transformation\_dimensions](#input\_metric\_transformation\_dimensions) | The additional dimensions to assign to the metric, in the form `"name" = "$.value". Conflicts with `metric\_transformation\_default\_value`.` | `map(string)` | `{}` | no |
 | <a name="input_metric_transformation_name"></a> [metric\_transformation\_name](#input\_metric\_transformation\_name) | The name of the CloudWatch metric to which the monitored log information should be published (e.g. ErrorCount) | `string` | n/a | yes |
 | <a name="input_metric_transformation_namespace"></a> [metric\_transformation\_namespace](#input\_metric\_transformation\_namespace) | The destination namespace of the CloudWatch metric. | `string` | n/a | yes |
 | <a name="input_metric_transformation_unit"></a> [metric\_transformation\_unit](#input\_metric\_transformation\_unit) | The unit to assign to the metric. If you omit this, the unit is set as None. | `string` | `null` | no |
