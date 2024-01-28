@@ -94,15 +94,15 @@ module "suppressor" {
 
   alarm_name          = "deployment-alarm"
   alarm_description   = "Deployment alarm"
-  comparison_operator = "LessThanThreshold"
+  comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = 1
   threshold           = 1
   metric_query = [{
     id = "e1"
 
     return_data = true
-    expression  = "TIME_SERIES(2)"
-    label       = "Expression one"
+    expression  = "TIME_SERIES(1)"
+    label       = "deployment"
     period      = 60
   }]
 
