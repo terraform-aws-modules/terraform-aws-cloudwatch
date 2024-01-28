@@ -11,7 +11,7 @@ resource "aws_cloudwatch_composite_alarm" "this" {
   alarm_rule                = var.alarm_rule
 
   dynamic "actions_suppressor" {
-    for_each = length(var.actions_suppresor) > 0 ? [var.actions_suppresor] : []
+    for_each = length(var.actions_suppressor) > 0 ? [var.actions_suppressor] : []
 
     content {
       alarm            = actions_suppressor.value.alarm

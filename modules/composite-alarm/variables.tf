@@ -21,7 +21,7 @@ variable "actions_enabled" {
   default     = true
 }
 
-variable "actions_suppresor" {
+variable "actions_suppressor" {
   description = "A map of actions suppressor alarm configurations."
   type        = map(any)
   default     = {}
