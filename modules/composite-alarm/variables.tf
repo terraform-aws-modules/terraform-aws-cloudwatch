@@ -1,4 +1,4 @@
-variable "create_composite_alarm" {
+variable "create" {
   description = "Whether to create the Cloudwatch composite alarm"
   type        = bool
   default     = true
@@ -7,6 +7,7 @@ variable "create_composite_alarm" {
 variable "alarm_name" {
   description = "The descriptive name for the composite alarm. This name must be unique within the region."
   type        = string
+  default     = null
 }
 
 variable "alarm_description" {
@@ -48,6 +49,7 @@ variable "ok_actions" {
 variable "alarm_rule" {
   description = "An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. The maximum length is 10240 characters."
   type        = string
+  default     = null
 }
 
 variable "tags" {

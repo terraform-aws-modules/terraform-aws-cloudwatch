@@ -18,7 +18,6 @@ module "composite_alarm" {
   alarm_actions = [module.aws_sns_topic_2.sns_topic_arn]
   ok_actions    = [module.aws_sns_topic_2.sns_topic_arn]
 
-  # https://github.com/hashicorp/terraform-provider-aws/issues/19575
   alarm_rule = join(" AND ", tolist([
     "ALARM(${module.lambda_duration_alarm.cloudwatch_metric_alarm_id})",
     "ALARM(${module.all_lambdas_errors_alarm.cloudwatch_metric_alarm_id})"

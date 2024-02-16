@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_composite_alarm" "this" {
-  count = var.create_composite_alarm ? 1 : 0
+  count = var.create ? 1 : 0
 
   alarm_name        = var.alarm_name
   alarm_description = var.alarm_description
