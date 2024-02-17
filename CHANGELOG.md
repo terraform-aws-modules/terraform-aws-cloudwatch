@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.1.0...v5.2.0) (2024-02-17)
+
+
+### Features
+
+* Cloudwatch composite alarm ([#65](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/65)) ([3108669](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/31086694efafbcad414853b33b9a2f362d8cacdd))
+
 ## [5.1.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.0.0...v5.1.0) (2024-01-14)
 
 
