@@ -180,6 +180,33 @@ fields @timestamp, @message
 EOF
 }
 ```
+
+### Composite Alarm
+
+```hcl
+module "composite_alarm" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/composite-alarm"
+  version = "~> 4.0"
+
+  alarm_name        = "composite-alarm"
+  alarm_description = "Example of a composite alarm"
+
+  alarm_actions = ["arn:aws:sns:eu-west-1:835367859852:my-sns-topic"]
+  ok_actions    = ["arn:aws:sns:eu-west-1:835367859852:my-sns-topic"]
+
+  alarm_rule = join(" AND ", tolist([
+    "ALARM(metric-alarm-1)",
+    "ALARM(metric-alarm-2)"
+  ]))
+
+  actions_suppressor = {
+    alarm            = "suppressor"
+    extension_period = 20
+    wait_period      = 10
+  }
+}
+```
+
 ## Examples
 
 - [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
@@ -189,6 +216,7 @@ EOF
 - [CIS AWS Foundations Controls: Metrics + Alarms](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/cis-alarms)
 - [Cloudwatch query definition](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/query-definition)
 - [Cloudwatch Metric Stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-stream)
+- [Cloudwatch Composite Alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/composite-alarm)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
