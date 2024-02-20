@@ -21,7 +21,7 @@ module "log_data_protection_policy" {
 
   log_group_name = module.log_group.cloudwatch_log_group_name
   policy_document = jsonencode({
-    Name    = "Example"
+    Name    = "RedactAddresses"
     Version = "2021-06-01"
 
     Statement = [
