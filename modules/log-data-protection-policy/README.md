@@ -29,8 +29,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the cloudwatch log data protection policy. | `bool` | `true` | no |
-| <a name="input_log_group_name"></a> [log\_group\_name](#input\_log\_group\_name) | The name of the log group under which the log stream is to be created. | `string` | n/a | yes |
-| <a name="input_policy_document"></a> [policy\_document](#input\_policy\_document) | Specifies the data protection policy in JSON. | `string` | n/a | yes |
+| <a name="input_log_group_name"></a> [log\_group\_name](#input\_log\_group\_name) | The name of the log group under which the log stream is to be created. | `string` | `null` | no |
+| <a name="input_policy_document"></a> [policy\_document](#input\_policy\_document) | Specifies the data protection policy in JSON. | `string` | `null` | no |
 
 ## Outputs
 
