@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.2.0...v5.3.0) (2024-02-26)
+
+
+### Features
+
+* Add option to define a delimiter for metric-alarms-by-multiple-dimensions ([#66](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/66)) ([0959943](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/0959943266ef9a1fbd8934034a7aa36eb2e8e891))
+
 ## [5.2.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.1.0...v5.2.0) (2024-02-17)
 
 
