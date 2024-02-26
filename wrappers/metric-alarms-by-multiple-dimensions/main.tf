@@ -5,6 +5,7 @@ module "wrapper" {
 
   create_metric_alarm                   = try(each.value.create_metric_alarm, var.defaults.create_metric_alarm, true)
   alarm_name                            = try(each.value.alarm_name, var.defaults.alarm_name)
+  alarm_name_delimiter                  = try(each.value.alarm_name_delimiter, var.defaults.alarm_name_delimiter, "")
   alarm_description                     = try(each.value.alarm_description, var.defaults.alarm_description, null)
   comparison_operator                   = try(each.value.comparison_operator, var.defaults.comparison_operator)
   evaluation_periods                    = try(each.value.evaluation_periods, var.defaults.evaluation_periods)
