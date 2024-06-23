@@ -120,7 +120,7 @@ module "cis_alarms" {
 
 AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
-### Metric Stream 
+### Metric Stream
 
 ```hcl
 module "metric_stream" {
@@ -170,7 +170,7 @@ module "metric_stream" {
 module "query_definition" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/query-definition"
   version = "~> 4.0"
-  
+
   name = "my-query-definition"
   log_group_names = ["my-log-group-name"]
   query_string = <<EOF
