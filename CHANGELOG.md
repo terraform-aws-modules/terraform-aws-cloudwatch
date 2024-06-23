@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.4.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.3.1...v5.4.0) (2024-06-23)
+
+
+### Features
+
+* Log Subscription Filter ([#69](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/69)) ([3fe3e1e](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/3fe3e1ea91aca61e9199b98d3aa9132db2400d33))
+
 ## [5.3.1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.3.0...v5.3.1) (2024-03-07)
 
 
