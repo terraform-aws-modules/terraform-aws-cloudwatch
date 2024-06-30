@@ -40,14 +40,26 @@ module "custom_log_data_protection_policy" {
 
   log_group_name = module.custom_data_protection_policy_log_group.cloudwatch_log_group_name
 
+  # custom data identifier not yet supported by the data source for aws_cloudwatch_log_data_protection_policy within the module
+  # specify your own json policy document if this is needed
+  # https://github.com/hashicorp/terraform-provider-aws/issues/35682
   policy_document = jsonencode({
-    Name    = "RedactCreditCardNumbers"
+    Name    = "RedactCustomerId"
     Version = "2021-06-01"
+
+    Configuration = {
+      CustomDataIdentifier = [
+        {
+          Name  = "CustomerId",
+          Regex = "CustomerId-\\d{5}"
+        }
+      ]
+    }
 
     Statement = [
       {
         Sid            = "Audit"
-        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/CreditCardNumber"]
+        DataIdentifier = ["CustomerId"]
         Operation = {
           Audit = {
             FindingsDestination = {
@@ -60,7 +72,7 @@ module "custom_log_data_protection_policy" {
       },
       {
         Sid            = "Redact"
-        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/CreditCardNumber"]
+        DataIdentifier = ["CustomerId"]
         Operation = {
           Deidentify = {
             MaskConfig = {}
