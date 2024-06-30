@@ -12,7 +12,7 @@ module "log_group" {
 module "custom_data_protection_policy_log_group" {
   source = "../../modules/log-group"
 
-  name_prefix       = "my-log-group-"
+  name_prefix       = "my-custom-policy-log-group-"
   retention_in_days = 7
 }
 

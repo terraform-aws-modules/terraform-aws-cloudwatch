@@ -136,6 +136,20 @@ module "log_group_data_protection" {
 }
 ```
 
+### Log Subscription Filter
+
+```hcl
+module "log_subscription_filter" {
+  source = "terraform-aws-modules/cloudwatch/aws//modules/log-subscription-filter"
+
+  name            = "my-filter"
+  destination_arn = "arn:aws:firehose:eu-west-1:835367859852:deliverystream/cw-logs"
+  filter_pattern  = "%test%"
+  log_group_name  = "my-log-group"
+  role_arn        = "arn:aws:iam::835367859852:role/cw-logs-to-firehose"
+}
+```
+
 ### Metric Stream
 
 ```hcl
@@ -233,6 +247,7 @@ module "composite_alarm" {
 - [Cloudwatch query definition](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/query-definition)
 - [Cloudwatch Metric Stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-stream)
 - [Cloudwatch Composite Alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/composite-alarm)
+- [Cloudwatch log subscription filter](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-subscription-filter)
 - [Cloudwatch log data protection policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-group-with-data-protection-policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
