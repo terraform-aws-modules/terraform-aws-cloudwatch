@@ -128,39 +128,15 @@ module "log_group_data_protection" {
   version = "~> 4.0"
 
   log_group_name  = "my-log-group"
-  policy_document = jsonencode({
-    Name    = "Example"
-    Version = "2021-06-01"
+  create_log_data_protection_policy = true
+  log_data_protection_policy_name   = "RedactAddress"
 
-    Statement = [
-      {
-        Sid            = "Audit"
-        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/Address"]
-        Operation = {
-          Audit = {
-            FindingsDestination = {
-              CloudWatchLogs = {
-                LogGroup = module.audit_destination_group.cloudwatch_log_group_name
-              }
-            }
-          }
-        }
-      },
-      {
-        Sid            = "Redact"
-        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/Address"]
-        Operation = {
-          Deidentify = {
-            MaskConfig = {}
-          }
-        }
-      }
-    ]
-  })
+  data_identifiers                          = ["arn:aws:dataprotection::aws:data-identifier/Address"]
+  findings_destination_cloudwatch_log_group = "audit-log-group"
 }
 ```
 
-### Metric Stream 
+### Metric Stream
 
 ```hcl
 module "metric_stream" {
@@ -210,7 +186,7 @@ module "metric_stream" {
 module "query_definition" {
   source  = "terraform-aws-modules/cloudwatch/aws//modules/query-definition"
   version = "~> 4.0"
-  
+
   name = "my-query-definition"
   log_group_names = ["my-log-group-name"]
   query_string = <<EOF

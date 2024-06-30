@@ -17,6 +17,8 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_audit_destination_group"></a> [audit\_destination\_group](#module\_audit\_destination\_group) | ../../modules/log-group | n/a |
+| <a name="module_custom_data_protection_policy_log_group"></a> [custom\_data\_protection\_policy\_log\_group](#module\_custom\_data\_protection\_policy\_log\_group) | ../../modules/log-group | n/a |
+| <a name="module_custom_log_data_protection_policy"></a> [custom\_log\_data\_protection\_policy](#module\_custom\_log\_data\_protection\_policy) | ../../modules/log-data-protection-policy | n/a |
 | <a name="module_log_data_protection_policy"></a> [log\_data\_protection\_policy](#module\_log\_data\_protection\_policy) | ../../modules/log-data-protection-policy | n/a |
 | <a name="module_log_group"></a> [log\_group](#module\_log\_group) | ../../modules/log-group | n/a |
 
