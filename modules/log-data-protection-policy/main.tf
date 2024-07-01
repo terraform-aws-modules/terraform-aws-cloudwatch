@@ -9,7 +9,7 @@ data "aws_cloudwatch_log_data_protection_policy_document" "this" {
   count = var.create && var.create_log_data_protection_policy ? 1 : 0
 
   name        = var.log_data_protection_policy_name
-  description = try(var.log_data_protection_description, null)
+  description = var.log_data_protection_description
 
   statement {
     sid              = var.audit_statement_sid
