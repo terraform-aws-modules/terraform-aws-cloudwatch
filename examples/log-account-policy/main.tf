@@ -30,8 +30,11 @@ module "audit_destination_group" {
 module "log_account_data_retention_policy" {
   source = "../../modules/log-account-policy"
 
-  log_account_policy_name           = "account-data-protection"
-  log_account_policy_type           = "DATA_PROTECTION_POLICY"
+  log_account_policy_name = "account-data-protection"
+  log_account_policy_type = "DATA_PROTECTION_POLICY"
+
+  # custom data identifier not yet supported by the data source for aws_cloudwatch_log_data_protection_policy within the module
+  # specify your own json policy document if this is needed using policy_document argument
   create_log_data_protection_policy = true
   log_data_protection_policy_name   = "redact-addresses"
 
