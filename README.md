@@ -211,7 +211,8 @@ module "composite_alarm" {
 
 ```hcl
 module "log_account_policy" {
-  source = "../../modules/log-account-policy"
+  source = "terraform-aws-modules/cloudwatch/aws//modules/log-account-policy"
+  version = "~> 4.0"
 
   log_account_policy_name           = "account-data-protection"
   log_account_policy_type           = "DATA_PROTECTION_POLICY"
