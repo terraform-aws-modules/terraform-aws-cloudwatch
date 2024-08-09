@@ -207,6 +207,23 @@ module "composite_alarm" {
 }
 ```
 
+### Log Account Policy
+
+```hcl
+module "log_account_policy" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/log-account-policy"
+  version = "~> 4.0"
+
+  log_account_policy_name           = "account-data-protection"
+  log_account_policy_type           = "DATA_PROTECTION_POLICY"
+  create_log_data_protection_policy = true
+  log_data_protection_policy_name   = "redact-addresses"
+
+  data_identifiers                          = ["arn:aws:dataprotection::aws:data-identifier/Address"]
+  findings_destination_cloudwatch_log_group = "my-cloudwatch-audit-log-group"
+}
+```
+
 ## Examples
 
 - [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
@@ -217,6 +234,7 @@ module "composite_alarm" {
 - [Cloudwatch query definition](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/query-definition)
 - [Cloudwatch Metric Stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-stream)
 - [Cloudwatch Composite Alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/composite-alarm)
+- [Cloudwatch Log Account Policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-account-policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
