@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.6.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.5.0...v5.6.0) (2024-09-09)
+
+
+### Features
+
+* Support `aws_cloudwatch_log_data_protection_policy` ([#70](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/70)) ([2b434f3](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/2b434f3a85b73ea4fa26d3fe27ce60949123b7d8))
+
 ## [5.5.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.4.0...v5.5.0) (2024-08-09)
 
 
