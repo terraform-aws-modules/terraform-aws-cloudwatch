@@ -120,6 +120,36 @@ module "cis_alarms" {
 
 AWS CloudTrail normally publishes logs into AWS CloudWatch Logs. This module creates log metric filters together with metric alarms according to [CIS AWS Foundations Benchmark v1.4.0 (05-28-2021)](https://www.cisecurity.org/benchmark/amazon_web_services/). Read more about [CIS AWS Foundations Controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html).
 
+### Log Group Data Protection Policy
+
+```hcl
+module "log_group_data_protection" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/log-data-protection-policy"
+  version = "~> 4.0"
+
+  log_group_name  = "my-log-group"
+  create_log_data_protection_policy = true
+  log_data_protection_policy_name   = "RedactAddress"
+
+  data_identifiers                          = ["arn:aws:dataprotection::aws:data-identifier/Address"]
+  findings_destination_cloudwatch_log_group = "audit-log-group"
+}
+```
+
+### Log Subscription Filter
+
+```hcl
+module "log_subscription_filter" {
+  source = "terraform-aws-modules/cloudwatch/aws//modules/log-subscription-filter"
+
+  name            = "my-filter"
+  destination_arn = "arn:aws:firehose:eu-west-1:835367859852:deliverystream/cw-logs"
+  filter_pattern  = "%test%"
+  log_group_name  = "my-log-group"
+  role_arn        = "arn:aws:iam::835367859852:role/cw-logs-to-firehose"
+}
+```
+
 ### Metric Stream
 
 ```hcl
@@ -234,6 +264,8 @@ module "log_account_policy" {
 - [Cloudwatch query definition](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/query-definition)
 - [Cloudwatch Metric Stream](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/metric-stream)
 - [Cloudwatch Composite Alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/composite-alarm)
+- [Cloudwatch log subscription filter](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-subscription-filter)
+- [Cloudwatch log data protection policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-group-with-data-protection-policy)
 - [Cloudwatch Log Account Policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-account-policy)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
