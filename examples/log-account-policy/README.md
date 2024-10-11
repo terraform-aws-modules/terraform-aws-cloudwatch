@@ -1,6 +1,6 @@
 # Complete Cloudwatch log account policy
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -53,4 +53,4 @@ No inputs.
 |------|-------------|
 | <a name="output_log_account_data_retention_policy_name"></a> [log\_account\_data\_retention\_policy\_name](#output\_log\_account\_data\_retention\_policy\_name) | Name of Cloudwatch log account policy |
 | <a name="output_log_account_subscription_filter_retention_policy_name"></a> [log\_account\_subscription\_filter\_retention\_policy\_name](#output\_log\_account\_subscription\_filter\_retention\_policy\_name) | Name of Cloudwatch log account policy |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

@@ -1,6 +1,6 @@
 # composite-alarm
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -45,4 +45,4 @@ No modules.
 |------|-------------|
 | <a name="output_cloudwatch_composite_alarm_arn"></a> [cloudwatch\_composite\_alarm\_arn](#output\_cloudwatch\_composite\_alarm\_arn) | The ARN of the Cloudwatch composite alarm. |
 | <a name="output_cloudwatch_composite_alarm_id"></a> [cloudwatch\_composite\_alarm\_id](#output\_cloudwatch\_composite\_alarm\_id) | The ID of the Cloudwatch composite alarm. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

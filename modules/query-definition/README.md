@@ -1,6 +1,6 @@
 # query-definition
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -38,4 +38,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_cloudwatch_query_definition_id"></a> [cloudwatch\_query\_definition\_id](#output\_cloudwatch\_query\_definition\_id) | The query definition id. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

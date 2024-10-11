@@ -14,7 +14,7 @@ $ terraform apply
 
 Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -48,4 +48,4 @@ No inputs.
 | <a name="output_cloudwatch_log_group_arn"></a> [cloudwatch\_log\_group\_arn](#output\_cloudwatch\_log\_group\_arn) | ARN of Cloudwatch log group |
 | <a name="output_cloudwatch_log_group_name"></a> [cloudwatch\_log\_group\_name](#output\_cloudwatch\_log\_group\_name) | Name of Cloudwatch log group |
 | <a name="output_cloudwatch_query_definition_id"></a> [cloudwatch\_query\_definition\_id](#output\_cloudwatch\_query\_definition\_id) | The query definition id |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

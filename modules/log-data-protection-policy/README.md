@@ -1,6 +1,6 @@
 # log-data-protection-policy
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -47,4 +47,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_log_group_name"></a> [log\_group\_name](#output\_log\_group\_name) | Name of Cloudwatch log group |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
