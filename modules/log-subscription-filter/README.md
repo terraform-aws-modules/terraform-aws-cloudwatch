@@ -1,6 +1,6 @@
 # log-stream
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -41,4 +41,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_cloudwatch_log_subscription_filter_name"></a> [cloudwatch\_log\_subscription\_filter\_name](#output\_cloudwatch\_log\_subscription\_filter\_name) | Log subscription filter name |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

@@ -14,7 +14,7 @@ $ terraform apply
 
 Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -75,4 +75,4 @@ No inputs.
 | <a name="output_include_example_metric_stream_creation_date"></a> [include\_example\_metric\_stream\_creation\_date](#output\_include\_example\_metric\_stream\_creation\_date) | Date and time in RFC3339 format that the metric stream was created. |
 | <a name="output_include_example_metric_stream_last_update_date"></a> [include\_example\_metric\_stream\_last\_update\_date](#output\_include\_example\_metric\_stream\_last\_update\_date) | Date and time in RFC3339 format that the metric stream was last updated. |
 | <a name="output_include_example_metric_stream_state"></a> [include\_example\_metric\_stream\_state](#output\_include\_example\_metric\_stream\_state) | State of the metric stream. Possible values are running and stopped. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

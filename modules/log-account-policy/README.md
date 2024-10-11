@@ -1,6 +1,6 @@
 # log-data-protection-policy
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -50,4 +50,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_log_account_policy_name"></a> [log\_account\_policy\_name](#output\_log\_account\_policy\_name) | Name of Cloudwatch log account policy |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

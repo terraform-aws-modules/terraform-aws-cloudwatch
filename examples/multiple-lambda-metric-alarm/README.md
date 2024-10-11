@@ -14,7 +14,7 @@ $ terraform apply
 
 Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -51,4 +51,4 @@ No inputs.
 | <a name="output_cloudwatch_metric_alarm_ids"></a> [cloudwatch\_metric\_alarm\_ids](#output\_cloudwatch\_metric\_alarm\_ids) | List of ID of the Cloudwatch metric alarms |
 | <a name="output_lambda_function1_arn"></a> [lambda\_function1\_arn](#output\_lambda\_function1\_arn) | Lambda function ARN |
 | <a name="output_lambda_function1_name"></a> [lambda\_function1\_name](#output\_lambda\_function1\_name) | Lambda function name |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
