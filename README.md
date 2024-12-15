@@ -254,6 +254,23 @@ module "log_account_policy" {
 }
 ```
 
+### Log Anomaly Detector
+
+```hcl
+module "log_anomaly_detector" {
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/log-anomaly-detector"
+  version = "~> 4.0"
+
+  detector_name           = "anomaly-detector"
+  log_group_arns          = ["arn:aws:logs:eu-west-1:835367859852:log-group:my-log-group"]
+  anomaly_visibility_time = 7
+  enabled                 = true
+  evaluation_frequency    = "FIVE_MIN"
+  filter_pattern          = "%test%"
+  kms_key_id              = "arn:aws:kms:eu-west-1:835367859852:key/9051f3e7-17b8-4543-8070-50e22599966"
+}
+```
+
 ## Examples
 
 - [Complete Cloudwatch log metric filter and alarm](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/complete-log-metric-filter-and-alarm)
@@ -267,6 +284,7 @@ module "log_account_policy" {
 - [Cloudwatch log subscription filter](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-subscription-filter)
 - [Cloudwatch log data protection policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-group-with-data-protection-policy)
 - [Cloudwatch Log Account Policy](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-account-policy)
+- [Cloudwatch Log Anomaly Detector](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/tree/master/examples/log-anomaly-detector)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
