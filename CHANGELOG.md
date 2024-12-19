@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.7.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.6.1...v5.7.0) (2024-12-19)
+
+
+### Features
+
+* Add Log Anomaly Detection Support ([#74](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/74)) ([e62a3b7](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/e62a3b725a4d696ba4cf2dd864d64b611834247e))
+
 ## [5.6.1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.6.0...v5.6.1) (2024-10-11)
 
 
