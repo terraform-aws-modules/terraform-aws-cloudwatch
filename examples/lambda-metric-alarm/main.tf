@@ -119,10 +119,8 @@ module "alarm_anomaly" {
   metric_query = [{
     id = "ad1"
 
-    return_data = true
     expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
     label       = "Invocations (expected)"
-    return_data = "true"
     },
     {
       id = "m1"
@@ -138,7 +136,7 @@ module "alarm_anomaly" {
           FunctionName = module.aws_lambda_function2.lambda_function_name
         }
       }]
-      return_data = "true"
+      return_data = true
   }]
 
   alarm_actions = [module.aws_sns_topic.sns_topic_arn]
