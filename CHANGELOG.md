@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.7.1](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.7.0...v5.7.1) (2025-03-11)
+
+
+### Bug Fixes
+
+* Fix example of alarm with anomaly detection ([#77](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/77)) ([698cd72](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/698cd7296f9182b1bc430e0b55084f3a6cc57b16))
+
 ## [5.7.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.6.1...v5.7.0) (2024-12-19)
 
 
