@@ -34,8 +34,9 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 module "kms" {
-  source      = "terraform-aws-modules/kms/aws"
-  version     = "~> 1.0"
+  source  = "terraform-aws-modules/kms/aws"
+  version = "~> 4.0"
+
   description = "KMS key for log anomaly detection"
 
   key_owners = [data.aws_caller_identity.current.arn]

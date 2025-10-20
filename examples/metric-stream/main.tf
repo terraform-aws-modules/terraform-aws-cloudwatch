@@ -12,7 +12,7 @@ module "stream_with_exclude_filter" {
   name          = "${local.name}-with-exclude-filter"
   firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_exclude_stream.arn
   output_format = "json"
-  role_arn      = module.stream_to_firehose_role.iam_role_arn
+  role_arn      = module.stream_to_firehose_iam_role.arn
 
   # conflicts with include_filter
   exclude_filter = {
@@ -36,7 +36,7 @@ module "stream_with_include_filter" {
   name          = "${local.name}-with-include-filter"
   firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_include_stream.arn
   output_format = "json"
-  role_arn      = module.stream_to_firehose_role.iam_role_arn
+  role_arn      = module.stream_to_firehose_iam_role.arn
 
   # conflicts with exclude_filter
   include_filter = {
@@ -78,7 +78,7 @@ module "stream_all" {
   name          = "${local.name}-all"
   firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_all_stream.arn
   output_format = "json"
-  role_arn      = module.stream_to_firehose_role.iam_role_arn
+  role_arn      = module.stream_to_firehose_iam_role.arn
 }
 
 module "stream_all_disabled" {
@@ -89,18 +89,14 @@ module "stream_all_disabled" {
   name          = "${local.name}-all-disabled"
   firehose_arn  = aws_kinesis_firehose_delivery_stream.s3_all_stream.arn
   output_format = "json"
-  role_arn      = module.stream_to_firehose_role.iam_role_arn
-}
-
-resource "random_pet" "this" {
-  length = 2
+  role_arn      = module.stream_to_firehose_iam_role.arn
 }
 
 module "metrics_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = ">= 3.15"
+  version = "~> 5.0"
 
-  bucket = "${local.name}-${random_pet.this.id}"
+  bucket_prefix = "${local.name}-"
 
   force_destroy = true
 }
@@ -110,7 +106,7 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_include_stream" {
   destination = "extended_s3"
 
   extended_s3_configuration {
-    role_arn   = module.firehose_to_s3.iam_role_arn
+    role_arn   = module.firehose_to_s3_iam_role.arn
     bucket_arn = module.metrics_bucket.s3_bucket_arn
     prefix     = "include-filter/"
   }
@@ -121,7 +117,7 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_exclude_stream" {
   destination = "extended_s3"
 
   extended_s3_configuration {
-    role_arn   = module.firehose_to_s3.iam_role_arn
+    role_arn   = module.firehose_to_s3_iam_role.arn
     bucket_arn = module.metrics_bucket.s3_bucket_arn
     prefix     = "exclude-filter/"
   }
@@ -132,103 +128,85 @@ resource "aws_kinesis_firehose_delivery_stream" "s3_all_stream" {
   destination = "extended_s3"
 
   extended_s3_configuration {
-    role_arn   = module.firehose_to_s3.iam_role_arn
+    role_arn   = module.firehose_to_s3_iam_role.arn
     bucket_arn = module.metrics_bucket.s3_bucket_arn
     prefix     = "all/"
   }
 }
 
-module "firehose_to_s3" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = ">= 5.30"
+module "firehose_to_s3_iam_role" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-role"
+  version = "~> 6.0"
 
-  trusted_role_services = [
-    "firehose.amazonaws.com"
-  ]
+  name = "${local.name}-firehose-to-s3-"
 
-  create_role = true
+  trust_policy_permissions = {
+    TrustRoleAndServiceToAssume = {
+      actions = [
+        "sts:AssumeRole",
+        "sts:TagSession",
+      ]
+      principals = [{
+        type = "Service"
+        identifiers = [
+          "firehose.amazonaws.com"
+        ]
+      }]
+    }
+  }
 
-  role_name_prefix  = "${local.name}-firehose-to-s3-"
-  role_requires_mfa = false
-
-  custom_role_policy_arns = [
-    module.firehose_to_s3_policy.arn
-  ]
-}
-
-module "firehose_to_s3_policy" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = ">= 5.30"
-
-  name        = "${local.name}-firehose-to-s3"
-  path        = "/"
-  description = local.name
-
-  policy = data.aws_iam_policy_document.firehose_to_s3.json
-}
-
-data "aws_iam_policy_document" "firehose_to_s3" {
-  statement {
-    effect = "Allow"
-
-    actions = [
-      "s3:AbortMultipartUpload",
-      "s3:GetBucketLocation",
-      "s3:GetObject",
-      "s3:ListBucket",
-      "s3:ListBucketMultipartUploads",
-      "s3:PutObject",
-    ]
-
-    resources = [
-      module.metrics_bucket.s3_bucket_arn,
-      "${module.metrics_bucket.s3_bucket_arn}/*",
-    ]
+  create_inline_policy = true
+  inline_policy_permissions = {
+    FirehoseToS3 = {
+      actions = [
+        "s3:AbortMultipartUpload",
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:PutObject",
+      ]
+      resources = [
+        module.metrics_bucket.s3_bucket_arn,
+        "${module.metrics_bucket.s3_bucket_arn}/*",
+      ]
+    }
   }
 }
 
-module "stream_to_firehose_role" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = ">= 5.30"
+module "stream_to_firehose_iam_role" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-role"
+  version = "~> 6.0"
 
-  trusted_role_services = [
-    "streams.metrics.cloudwatch.amazonaws.com"
-  ]
+  name = "${local.name}-to-firehose-"
 
-  create_role = true
+  trust_policy_permissions = {
+    TrustRoleAndServiceToAssume = {
+      actions = [
+        "sts:AssumeRole",
+        "sts:TagSession",
+      ]
+      principals = [{
+        type = "Service"
+        identifiers = [
+          "streams.metrics.cloudwatch.amazonaws.com"
+        ]
+      }]
+    }
+  }
 
-  role_name_prefix  = "${local.name}-to-firehose-"
-  role_requires_mfa = false
-
-  custom_role_policy_arns = [
-    module.stream_to_firehose_policy.arn
-  ]
-}
-
-module "stream_to_firehose_policy" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = ">= 5.30"
-
-  name        = "${local.name}-to-firehose"
-  path        = "/"
-  description = local.name
-
-  policy = data.aws_iam_policy_document.metric_stream_to_firehose.json
-}
-
-data "aws_iam_policy_document" "metric_stream_to_firehose" {
-  statement {
-    effect = "Allow"
-
-    actions = [
-      "firehose:PutRecord",
-      "firehose:PutRecordBatch",
-    ]
-
-    resources = [
-      aws_kinesis_firehose_delivery_stream.s3_include_stream.arn,
-      aws_kinesis_firehose_delivery_stream.s3_exclude_stream.arn,
-      aws_kinesis_firehose_delivery_stream.s3_all_stream.arn,
-    ]
+  create_inline_policy = true
+  inline_policy_permissions = {
+    StreamToFirehose = {
+      actions = [
+        "firehose:PutRecord",
+        "firehose:PutRecordBatch",
+      ]
+      resources = [
+        aws_kinesis_firehose_delivery_stream.s3_include_stream.arn,
+        aws_kinesis_firehose_delivery_stream.s3_exclude_stream.arn,
+        aws_kinesis_firehose_delivery_stream.s3_all_stream.arn,
+      ]
+    }
   }
 }

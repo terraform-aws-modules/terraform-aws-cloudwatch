@@ -18,7 +18,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_kms"></a> [kms](#module\_kms) | terraform-aws-modules/kms/aws | ~> 1.0 |
+| <a name="module_kms"></a> [kms](#module\_kms) | terraform-aws-modules/kms/aws | ~> 4.0 |
 | <a name="module_log_anomaly_detector"></a> [log\_anomaly\_detector](#module\_log\_anomaly\_detector) | ../../modules/log-anomaly-detector | n/a |
 | <a name="module_log_group"></a> [log\_group](#module\_log\_group) | ../../modules/log-group | n/a |
 
