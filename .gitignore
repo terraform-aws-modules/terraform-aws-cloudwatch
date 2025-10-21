@@ -7,7 +7,6 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-*.tfplan
 
 # Crash log files
 crash.log
@@ -29,5 +28,12 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# fixtures
+# Lambda build artifacts
+builds/
+__pycache__/
 *.zip
+.tox
+
+# Local editors/macos files
+.DS_Store
+.idea

@@ -119,8 +119,8 @@ module "alarm_anomaly" {
   metric_query = [{
     id = "ad1"
 
-    expression  = "ANOMALY_DETECTION_BAND(m1, 2)"
-    label       = "Invocations (expected)"
+    expression = "ANOMALY_DETECTION_BAND(m1, 2)"
+    label      = "Invocations (expected)"
     },
     {
       id = "m1"
