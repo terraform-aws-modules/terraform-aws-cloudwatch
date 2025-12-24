@@ -62,9 +62,9 @@ module "metric_alarm" {
   period              = 60
   unit                = "Count"
 
-  namespace   = "MyApplication"
-  metric_name = "ErrorCount"
-  statistic   = "Maximum"
+  metric_namespace = "MyApplication"
+  metric_name      = "ErrorCount"
+  statistic        = "Maximum"
 
   alarm_actions = ["arn:aws:sns:eu-west-1:835367859852:my-sns-queue"]
 }
@@ -87,9 +87,9 @@ module "metric_alarms" {
   period              = 60
   unit                = "Milliseconds"
 
-  namespace   = "AWS/Lambda"
-  metric_name = "Duration"
-  statistic   = "Maximum"
+  metric_namespace = "AWS/Lambda"
+  metric_name      = "Duration"
+  statistic        = "Maximum"
 
   dimensions = {
     "lambda1" = {

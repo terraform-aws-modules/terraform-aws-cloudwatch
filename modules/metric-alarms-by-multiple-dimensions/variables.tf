@@ -48,7 +48,7 @@ variable "metric_name" {
   default     = null
 }
 
-variable "namespace" {
+variable "metric_namespace" {
   description = "The namespace for the alarm's associated metric. See docs for the list of namespaces. See docs for supported metrics."
   type        = string
   default     = null

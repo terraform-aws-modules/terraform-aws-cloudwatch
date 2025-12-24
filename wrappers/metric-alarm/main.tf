@@ -17,7 +17,7 @@ module "wrapper" {
   insufficient_data_actions             = try(each.value.insufficient_data_actions, var.defaults.insufficient_data_actions, null)
   metric_name                           = try(each.value.metric_name, var.defaults.metric_name, null)
   metric_query                          = try(each.value.metric_query, var.defaults.metric_query, [])
-  namespace                             = try(each.value.namespace, var.defaults.namespace, null)
+  metric_namespace                      = try(each.value.metric_namespace, var.defaults.metric_namespace, null)
   ok_actions                            = try(each.value.ok_actions, var.defaults.ok_actions, null)
   period                                = try(each.value.period, var.defaults.period, null)
   statistic                             = try(each.value.statistic, var.defaults.statistic, null)

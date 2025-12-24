@@ -20,7 +20,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
 
   # conflicts with metric_query
   metric_name        = var.metric_name
-  namespace          = var.namespace
+  namespace          = var.metric_namespace
   period             = var.period
   statistic          = var.statistic
   extended_statistic = var.extended_statistic
@@ -42,7 +42,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
         for_each = lookup(metric_query.value, "metric", [])
         content {
           metric_name = lookup(metric.value, "metric_name")
-          namespace   = lookup(metric.value, "namespace")
+          namespace   = lookup(metric.value, "metric_namespace")
           period      = lookup(metric.value, "period")
           stat        = lookup(metric.value, "stat")
           unit        = lookup(metric.value, "unit", null)
