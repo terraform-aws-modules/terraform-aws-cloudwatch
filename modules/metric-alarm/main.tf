@@ -31,7 +31,7 @@ resource "aws_cloudwatch_metric_alarm" "this" {
   dynamic "metric_query" {
     for_each = var.metric_query
     content {
-      id          = lookup(metric_query.value, "id")
+      id          = metric_query.value["id"]
       account_id  = lookup(metric_query.value, "account_id", null)
       label       = lookup(metric_query.value, "label", null)
       return_data = lookup(metric_query.value, "return_data", null)
@@ -41,10 +41,10 @@ resource "aws_cloudwatch_metric_alarm" "this" {
       dynamic "metric" {
         for_each = lookup(metric_query.value, "metric", [])
         content {
-          metric_name = lookup(metric.value, "metric_name")
-          namespace   = lookup(metric.value, "namespace")
-          period      = lookup(metric.value, "period")
-          stat        = lookup(metric.value, "stat")
+          metric_name = metric.value["metric_name"]
+          namespace   = metric.value["namespace"]
+          period      = metric.value["period"]
+          stat        = metric.value["stat"]
           unit        = lookup(metric.value, "unit", null)
           dimensions  = lookup(metric.value, "dimensions", null)
         }
