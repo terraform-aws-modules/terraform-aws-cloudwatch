@@ -4,14 +4,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.81 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.81 |
 
 ## Modules
@@ -21,14 +21,14 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_cloudwatch_log_account_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_account_policy) | resource |
 | [aws_cloudwatch_log_data_protection_policy_document.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cloudwatch_log_data_protection_policy_document) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_audit_statement_sid"></a> [audit\_statement\_sid](#input\_audit\_statement\_sid) | Name of the audit statement. | `string` | `"audit-policy"` | no |
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the cloudwatch log data protection policy. | `bool` | `true` | no |
 | <a name="input_create_log_data_protection_policy"></a> [create\_log\_data\_protection\_policy](#input\_create\_log\_data\_protection\_policy) | Whether to create the cloudwatch log data protection policy. | `bool` | `false` | no |
@@ -48,6 +48,6 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_log_account_policy_name"></a> [log\_account\_policy\_name](#output\_log\_account\_policy\_name) | Name of Cloudwatch log account policy |
 <!-- END_TF_DOCS -->

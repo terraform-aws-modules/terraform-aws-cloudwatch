@@ -4,14 +4,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.81 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.81 |
 
 ## Modules
@@ -21,13 +21,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_cloudwatch_composite_alarm.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_composite_alarm) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_actions_enabled"></a> [actions\_enabled](#input\_actions\_enabled) | Indicates whether or not actions should be executed during any changes to the composite alarm's state. Defaults to true. | `bool` | `true` | no |
 | <a name="input_actions_suppressor"></a> [actions\_suppressor](#input\_actions\_suppressor) | A map of actions suppressor alarm configurations. | `map(any)` | `{}` | no |
 | <a name="input_alarm_actions"></a> [alarm\_actions](#input\_alarm\_actions) | The set of actions to execute when this alarm transitions into an ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN). Up to 5 actions are allowed. | `list(string)` | `null` | no |
@@ -42,7 +42,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cloudwatch_composite_alarm_arn"></a> [cloudwatch\_composite\_alarm\_arn](#output\_cloudwatch\_composite\_alarm\_arn) | The ARN of the Cloudwatch composite alarm. |
 | <a name="output_cloudwatch_composite_alarm_id"></a> [cloudwatch\_composite\_alarm\_id](#output\_cloudwatch\_composite\_alarm\_id) | The ID of the Cloudwatch composite alarm. |
 <!-- END_TF_DOCS -->

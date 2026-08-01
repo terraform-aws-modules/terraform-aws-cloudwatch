@@ -4,7 +4,7 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0 |
 
@@ -15,7 +15,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_audit_destination_group"></a> [audit\_destination\_group](#module\_audit\_destination\_group) | ../../modules/log-group | n/a |
 | <a name="module_custom_data_protection_policy_log_group"></a> [custom\_data\_protection\_policy\_log\_group](#module\_custom\_data\_protection\_policy\_log\_group) | ../../modules/log-group | n/a |
 | <a name="module_custom_log_data_protection_policy"></a> [custom\_log\_data\_protection\_policy](#module\_custom\_log\_data\_protection\_policy) | ../../modules/log-data-protection-policy | n/a |
@@ -33,7 +33,7 @@ No inputs.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cloudwatch_log_group_arn"></a> [cloudwatch\_log\_group\_arn](#output\_cloudwatch\_log\_group\_arn) | ARN of Cloudwatch log group |
 | <a name="output_cloudwatch_log_group_name"></a> [cloudwatch\_log\_group\_name](#output\_cloudwatch\_log\_group\_name) | Name of Cloudwatch log group |
 <!-- END_TF_DOCS -->
