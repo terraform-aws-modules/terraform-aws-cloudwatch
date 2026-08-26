@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.7.3](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.7.2...v5.7.3) (2026-08-26)
+
+### Bug Fixes
+
+* Update GitHub Actions and pre-commit hook versions ([#85](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/85)) ([dc02399](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/dc023992a86d91fa6c17bf99750245a27a7fa4a5))
+
 ## [5.7.2](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.7.1...v5.7.2) (2025-10-21)
 
 ### Bug Fixes
