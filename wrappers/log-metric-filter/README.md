@@ -70,9 +70,9 @@ module "wrapper" {
 
 ```hcl
 terraform {
-  source = "tfr:///terraform-aws-modules/s3-bucket/aws//wrappers"
+  source = "tfr:///terraform-aws-modules/cloudwatch/aws//wrappers/log-metric-filter"
   # Alternative source:
-  # source = "git::git@github.com:terraform-aws-modules/terraform-aws-s3-bucket.git//wrappers?ref=master"
+  # source = "git::git@github.com:terraform-aws-modules/terraform-aws-cloudwatch.git//wrappers/log-metric-filter?ref=master"
 }
 
 inputs = {

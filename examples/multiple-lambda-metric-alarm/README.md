@@ -18,7 +18,7 @@ Note that this example may create resources which cost money. Run `terraform des
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.81 |
 
@@ -29,7 +29,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_alarms"></a> [alarms](#module\_alarms) | ../../modules/metric-alarms-by-multiple-dimensions | n/a |
 | <a name="module_aws_lambda_function1"></a> [aws\_lambda\_function1](#module\_aws\_lambda\_function1) | ../fixtures/aws_lambda_function | n/a |
 | <a name="module_aws_lambda_function2"></a> [aws\_lambda\_function2](#module\_aws\_lambda\_function2) | ../fixtures/aws_lambda_function | n/a |
@@ -46,7 +46,7 @@ No inputs.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cloudwatch_metric_alarm_arns"></a> [cloudwatch\_metric\_alarm\_arns](#output\_cloudwatch\_metric\_alarm\_arns) | List of ARN of the Cloudwatch metric alarms |
 | <a name="output_cloudwatch_metric_alarm_ids"></a> [cloudwatch\_metric\_alarm\_ids](#output\_cloudwatch\_metric\_alarm\_ids) | List of ID of the Cloudwatch metric alarms |
 | <a name="output_lambda_function1_arn"></a> [lambda\_function1\_arn](#output\_lambda\_function1\_arn) | Lambda function ARN |

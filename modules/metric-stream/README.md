@@ -4,14 +4,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.81 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.81 |
 
 ## Modules
@@ -21,13 +21,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_cloudwatch_metric_stream.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_stream) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_create"></a> [create](#input\_create) | Whether to create the Cloudwatch metric stream. | `bool` | `true` | no |
 | <a name="input_exclude_filter"></a> [exclude\_filter](#input\_exclude\_filter) | Map of exclusive metric filters. If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces and the conditional metric names that you specify here. If you don't specify metric names or provide empty metric names whole metric namespace is excluded. Conflicts with include\_filter. | `any` | `{}` | no |
 | <a name="input_firehose_arn"></a> [firehose\_arn](#input\_firehose\_arn) | ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. | `string` | n/a | yes |
@@ -42,7 +42,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_cloudwatch_metric_stream"></a> [cloudwatch\_metric\_stream](#output\_cloudwatch\_metric\_stream) | ARN of the metric stream. |
 | <a name="output_cloudwatch_metric_stream_creation_date"></a> [cloudwatch\_metric\_stream\_creation\_date](#output\_cloudwatch\_metric\_stream\_creation\_date) | Date and time in RFC3339 format that the metric stream was created. |
 | <a name="output_cloudwatch_metric_stream_last_update_date"></a> [cloudwatch\_metric\_stream\_last\_update\_date](#output\_cloudwatch\_metric\_stream\_last\_update\_date) | Date and time in RFC3339 format that the metric stream was last updated. |
