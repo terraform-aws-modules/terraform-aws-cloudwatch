@@ -7,6 +7,10 @@ module "log_group" {
 
   name_prefix       = "my-log-group-"
   retention_in_days = 7
+
+  # Set to true to have CloudWatch reject deletion of the log group.
+  # Kept false here so that `terraform destroy` can remove the example.
+  deletion_protection_enabled = false
 }
 
 module "log_stream" {

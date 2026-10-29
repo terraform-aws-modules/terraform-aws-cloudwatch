@@ -45,6 +45,12 @@ variable "skip_destroy" {
   default     = null
 }
 
+variable "deletion_protection_enabled" {
+  description = "Whether to enable deletion protection for the log group. While enabled, CloudWatch rejects any attempt to delete the log group. Once enabled, it must be set explicitly to false to disable it; removing the argument leaves it enabled"
+  type        = bool
+  default     = null
+}
+
 variable "tags" {
   description = "A map of tags to add to Cloudwatch log group"
   type        = map(string)
