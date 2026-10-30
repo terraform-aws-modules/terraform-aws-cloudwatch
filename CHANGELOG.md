@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.0](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.7.3...v6.0.0) (2026-10-30)
+
+### ⚠ BREAKING CHANGES
+
+* Add `deletion_protection_enabled` to log-group module (#88)
+
+### Features
+
+* Add `deletion_protection_enabled` to log-group module ([#88](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/issues/88)) ([2343bfb](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/commit/2343bfb3e33fb097be045f293bafac9793ba127e))
+
 ## [5.7.3](https://github.com/terraform-aws-modules/terraform-aws-cloudwatch/compare/v5.7.2...v5.7.3) (2026-08-26)
 
 ### Bug Fixes
